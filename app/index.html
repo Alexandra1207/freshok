@@ -1,15 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>ФРЕШОК онлайн маркет</title>
   <link rel="stylesheet" href="css/style.min.css">
 </head>
+
 <body>
+  <header class="header">
+    <div class="header__top">
+      <div class="container">
+        <nav class="menu">
+          <ul class="menu__info">
+            <li class="menu__info-item">
+              <a class="menu__info-link menu__info-link--del" href="#">
+                АДРЕС И ВРЕМЯ ДОСТАВКИ
+              </a>
+            </li>
+            <li class="menu__info-item">
+              <a class="menu__info-link menu__info-link--tel" href="#">
+                ГОРЯЧАЯ ЛИНИЯ 24/7
+              </a>
+            </li>
+          </ul>
+          <ul class="menu__list">
+            <li class="menu__list-item">
+              <a class="menu__list-link" href="#">ДОСТАВКА</a>
+            </li>
+            <li class="menu__list-item">
+              <a class="menu__list-link" href="#">О НАС</a>
+            </li>
+            <li class="menu__list-item">
+              <a class="menu__list-link" href="#">НОВОСТИ</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="header__content">
+      <div class="container">
+        <div class="header__content-inner">
+          <ul class="header__list">
+            <li class="header__list-item">
+              <a class="logo" href="#">
+                <img class="logo__img" src="images/logo.svg" alt="логотип">
+              </a>
+            </li>
+            <li class="header__list-item">
+              <button class="catalog-btn">
+                <img class="catalog-btn__img-nav" src="images/icons/nav.svg" alt="кнопка каталога">
+                Каталог продуктов
+                <img class="catalog-btn__img-arr" src="images/icons/arrow-down.svg" alt="кнопка каталога">
+              </button>
+            </li>
+            <li class="header__list-item">
+              <form class="search-form">
+                <img class="search-form__img" src="images/icons/search.svg" alt="иконка поиска">
+                <input class="search-form__input" type="text" placeholder="Найти в магазине ...">
+                <button class="search-form__btn" type="submit">ПОИСК</button>
+              </form>
+            </li>
+          </ul>
+          <ul class="user-nav">
+            <li class="user-nav__item">
+              <a class="user-nav__link" href="#">
+                <img class="user-nav__img" src="images/icons/user.svg" alt="иконка пользовотеля">
+              </a>
+            </li>
+            <li class="user-nav__item">
+              <a class="user-nav__link" href="#">
+                <img class="user-nav__img" src="images/icons/heart.svg" alt="иконка избранное">
+                <span class="user-nav__num">12</span>
+              </a>
+            </li>
+            <li class="user-nav__item">
+              <a class="user-nav__link" href="#">
+                <img class="user-nav__img" src="images/icons/cart.svg" alt="иконка корзина">
+                <span class="user-nav__num">12</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </header>
 
 
   <script src="js/main.min.js"></script>
 </body>
+
 </html>
