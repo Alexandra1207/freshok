@@ -1,13 +1,47 @@
+html,
 body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
   @extend %opensans-400;
   font-size: 14px;
   line-height: 1.4;
   letter-spacing: 0.03em;
   color: $dark-500;
+  background-color: $white;
+}
+
+.main {
+  flex-grow: 1;
 }
 
 .container {
   max-width: 1320px;
   margin: 0 auto;
   padding: 0 15px;
+}
+
+.title {
+  margin-bottom: 30px;
+  @extend %ruda-600;
+  font-size: 32px;
+  color: $dark-900;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }

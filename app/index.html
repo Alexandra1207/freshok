@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ФРЕШОК онлайн маркет</title>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 
@@ -21,7 +23,7 @@
               </a>
             </li>
             <li class="menu__info-item">
-              <a class="menu__info-link menu__info-link--tel" href="#">
+              <a class="menu__info-link menu__info-link--tel" href="tel:+7777777777">
                 ГОРЯЧАЯ ЛИНИЯ 24/7
               </a>
             </li>
@@ -46,20 +48,17 @@
           <ul class="header__list">
             <li class="header__list-item">
               <a class="logo" href="#">
-                <img class="logo__img" src="images/logo.svg" alt="логотип">
+                <img class="logo__img" src="images/logo.svg" width="200" height="60" alt="логотип">
               </a>
             </li>
             <li class="header__list-item">
-              <button class="catalog-btn">
-                <img class="catalog-btn__img-nav" src="images/icons/nav.svg" alt="кнопка каталога">
+              <button class="catalog-btn" type="button">
                 Каталог продуктов
-                <img class="catalog-btn__img-arr" src="images/icons/arrow-down.svg" alt="кнопка каталога">
               </button>
             </li>
             <li class="header__list-item">
               <form class="search-form">
-                <img class="search-form__img" src="images/icons/search.svg" alt="иконка поиска">
-                <input class="search-form__input" type="text" placeholder="Найти в магазине ...">
+                <input class="search-form__input" type="text" name="search" placeholder="Найти в магазине ...">
                 <button class="search-form__btn" type="submit">ПОИСК</button>
               </form>
             </li>
@@ -67,18 +66,24 @@
           <ul class="user-nav">
             <li class="user-nav__item">
               <a class="user-nav__link" href="#">
-                <img class="user-nav__img" src="images/icons/user.svg" alt="иконка пользовотеля">
+                <svg class="user-icon">
+                  <use xlink:href="images/sprite.svg#user"></use>
+                </svg>
               </a>
             </li>
             <li class="user-nav__item">
               <a class="user-nav__link" href="#">
-                <img class="user-nav__img" src="images/icons/heart.svg" alt="иконка избранное">
+                <svg class="heart-icon">
+                  <use xlink:href="images/sprite.svg#heart"></use>
+                </svg>
                 <span class="user-nav__num">12</span>
               </a>
             </li>
             <li class="user-nav__item">
               <a class="user-nav__link" href="#">
-                <img class="user-nav__img" src="images/icons/cart.svg" alt="иконка корзина">
+                <svg class="cart-icon">
+                  <use xlink:href="images/sprite.svg#cart"></use>
+                </svg>
                 <span class="user-nav__num">12</span>
               </a>
             </li>
@@ -88,6 +93,440 @@
       </div>
     </div>
   </header>
+
+  <main class="main">
+    <section class="top-slider">
+      <ul class="top-slider__list">
+        <li class="top-slider__item" style="background-image: url('images/slider/slide1.jpg')" width="1920"
+          height="600">
+          <div class="container top-slider__item-inner">
+            <h1 class="top-slider__title">
+              СВЕЖАЧОК ВАМ в ХАТУ <span>Скидка -50%</span>
+            </h1>
+            <p class="top-slider__text">
+              Только с 7 по 13 июля скидка на сезонные фрукты и овощи до 50%. Торопитесь!
+            </p>
+            <a class="top-slider__btn" href="#">
+              Купить сейчас
+            </a>
+          </div>
+        </li>
+        <li class="top-slider__item" style="background-image: url('images/slider/slide2.jpg')" width="1920"
+          height="600">
+          <div class="container top-slider__item-inner">
+            <h1 class="top-slider__title">
+              НАКРУТИ СЕБЕ ТОМАТОВ <span>АКЦИЯ: 3 кг по цене 1</span>
+            </h1>
+            <p class="top-slider__text">
+              Только с 12 по 15 июля скидка на домашние помидорчики
+            </p>
+            <a class="top-slider__btn" href="#">
+              Купить сейчас
+            </a>
+          </div>
+        </li>
+        <li class="top-slider__item" style="background-image: url('images/slider/slide3.jpg')" width="1920"
+          height="600">
+          <div class="container top-slider__item-inner">
+            <h1 class="top-slider__title">
+              Пусть остальные позеленеют от зависти <span>Распродажа зелени</span>
+            </h1>
+            <a class="top-slider__btn" href="#">
+              Купить сейчас
+            </a>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- //Полоска между слайдером и следующей секцией возникла после подключения slick-slider -->
+    <!-- При подключении иконок через спрайт, размер, почему-то меньше, чем указываешь -->
+
+    <section class="info">
+      <div class="container">
+        <h2 class="sr-only">Инфо</h2>
+        <ul class="info__list">
+          <li class="info__item  info__item--delivery">
+            <h3 class="info__title">
+              Бесплатная доставка
+            </h3>
+            <p class="info__text">
+              Для заказов на сумму от 500 ₽
+            </p>
+          </li>
+          <li class="info__item info__item--return">
+            <h3 class="info__title">
+              Возврат товара
+            </h3>
+            <p class="info__text">
+              Если товары были испорчены
+            </p>
+          </li>
+          <li class="info__item  info__item--support">
+            <h3 class="info__title">
+              Поддержка 24/7
+            </h3>
+            <p class="info__text">
+              Лучшие операторы
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+<!-- Лена, ты сказала, что расскажешь про скринридеры и доступность -->
+<!-- И еще не поняла пункт H-23, критерии верстки. Пользовательский (динамический контент) обернут в теги без классов. Сайт подготовлен для интеграции (натяжки) на CMS ЭТО КАК? -->
+
+    <section class="top-products">
+      <div class="container">
+        <h2 class="title">Топовые товары</h2>
+        <ul class="top-products__filter-btn">
+          <li class="top-products__item-btn">
+            <button class="top-products__btn" data-filter="all" type="button">Все товары</button>
+          </li>
+          <li class="top-products__item-btn">
+            <button class="top-products__btn" data-filter=".category-fruits" type="button">Фрукты</button>
+          </li>
+          <li class="top-products__item-btn">
+            <button class="top-products__btn" data-filter=".category-vegetables" type="button">ОВОЩИ</button>
+          </li>
+          <li class="top-products__item-btn">
+            <button class="top-products__btn" data-filter=".category-drinks" type="button">Напитки</button>
+          </li>
+          <li class="top-products__item-btn">
+            <button class="top-products__btn" data-filter=".category-grocery" type="button">БАКАЛЕЯ</button>
+          </li>
+        </ul>
+
+            <!-- Изображение на карточках сжимается -->
+            <!-- В карточках продуктов после выбора категории остается большое пространство до кнопки "показать еще" -->
+
+        <ul class="top-products__content">
+
+          <li class="top-products__item mix category-fruits">
+            <article class="product">
+              <div class="product__badge">
+                <p class="product__new">НОВИНКА</p>
+                <div class="discount-box">
+                  <p class="product__discount">-50%</p>
+                </div>
+              </div>
+              <div class="heart-block">
+                <svg class="heart">
+                  <use xlink:href="images/sprite.svg#heart"></use>
+                </svg>
+              </div>
+              <div class="product__content">
+                <a class="product__link-img" href="#">
+                  <img class="product__img" src="images/products/pineapple.jpg" width="300" height="225"
+                    alt="фото ананас">
+                  <div class="product__search"></div>
+                </a>
+                <a class="product__link-name" href="#">
+                  Ананас, 1кг
+                </a>
+              </div>
+              <div class="price-box">
+                <p class="product__exprice">1999 ₽</p>
+                <p class="product__price">999 ₽</p>
+              </div>
+
+              <div class="product__box-cart">
+                <svg class="cart">
+                  <use xlink:href="images/sprite.svg#cart"></use>
+                </svg>
+              </div>
+            </article>
+          </li>
+
+          <li class="top-products__item mix category-fruits">
+            <article class="product">
+              <div class="heart-block">
+                <svg class="heart">
+                  <use xlink:href="images/sprite.svg#heart"></use>
+                </svg>
+              </div>
+              <div class="product__content">
+                <a class="product__link-img" href="#">
+                  <img class="product__img" src="images/products/lemon.jpg" width="300" height="225" alt="фото лимоны">
+                  <div class="product__search"></div>
+                </a>
+                <a class="product__link-name" href="#">
+                  Лимон, 1кг
+                </a>
+              </div>
+              <div class="price-box">
+                <p class="product__price">199 ₽</p>
+              </div>
+              <div class="product__box-cart">
+                <svg class="cart">
+                  <use xlink:href="images/sprite.svg#cart"></use>
+                </svg>
+              </div>
+            </article>
+          </li>
+
+          <li class="top-products__item mix category-fruits">
+            <article class="product">
+              <div class="product__badge">
+                <p class="product__hit">ХИТ</p>
+              </div>
+              <div class="heart-block">
+                <svg class="heart">
+                  <use xlink:href="images/sprite.svg#heart"></use>
+                </svg>
+              </div>
+              <div class="product__content">
+                <a class="product__link-img" href="#">
+                  <img class="product__img" src="images/products/dragon-fruit.jpg" width="300" height="234"
+                    alt="фото драконий фрукт">
+                  <div class="product__search"></div>
+                </a>
+                <a class="product__link-name">Питахайя красная с белой мякотью, 1шт</a>
+              </div>
+              <div class="price-box">
+                <p class="product__price">1019 ₽</p>
+              </div>
+              <div class="product__box-cart">
+                <svg class="cart">
+                  <use xlink:href="images/sprite.svg#cart"></use>
+                </svg>
+              </div>
+            </article>
+          </li>
+
+          <li class="top-products__item mix category-grocery">
+            <article class="product">
+              <div class="heart-block">
+                <svg class="heart">
+                  <use xlink:href="images/sprite.svg#heart"></use>
+                </svg>
+              </div>
+              <div class="product__content">
+                <a class="product__link-img" href="#">
+                  <img class="product__img" src="images/products/ketchup.jpg" width="300" height="225"
+                    alt="фото кетчуп">
+                  <div class="product__search"></div>
+                </a>
+                <a class="product__link-name">Кетчуп томатный детский органический Bio-Zentrale 500мл, 1 шт</a>
+              </div>
+              <div class="product__box-price">
+                <p class="product__price">600 ₽</p>
+              </div>
+              <div class="product__box-cart">
+                <svg class="cart">
+                  <use xlink:href="images/sprite.svg#cart"></use>
+                </svg>
+              </div>
+            </article>
+          </li>
+
+          <li class="top-products__item mix category-vegetables">
+            <article class="product">
+              <div class="product__badge">
+                <p class="product__hit">ХИТ</p>
+              </div>
+              <div class="heart-block">
+                <svg class="heart">
+                  <use xlink:href="images/sprite.svg#heart"></use>
+                </svg>
+              </div>
+              <div class="product__content">
+                <a class="product__link-img" href="#">
+                  <img class="product__img" width="300" height="225" src="images/products/carrot.jpg"
+                    alt="фото морковь">
+                  <div class="product__search"></div>
+                </a>
+                <a class="product__link-name">Морковь молодая с бабушкиной грядки, 1кг</a>
+              </div>
+              <div class="price-box">
+                <p class="product__price">49 ₽</p>
+              </div>
+              <div class="product__box-cart">
+                <svg class="cart">
+                  <use xlink:href="images/sprite.svg#cart"></use>
+                </svg>
+              </div>
+            </article>
+          </li>
+
+          <li class="top-products__item mix category-drinks">
+            <article class="product">
+              <div class="product__badge">
+                <p class="product__discount">-30%</p>
+              </div>
+              <div class="heart-block">
+                <svg class="heart">
+                  <use xlink:href="images/sprite.svg#heart"></use>
+                </svg>
+              </div>
+              <div class="product__content">
+                <a class="product__link-img" href="#">
+                  <img class="product__img" width="300" height="215" src="images/products/juice.jpg" alt="фото напиток">
+                  <div class="product__search"></div>
+                </a>
+                <a class="product__link-name">Напиток сокосодержащий Sanpellegrino Aranciata Orange Красный апельсин
+                  безалкогольн...
+                </a>
+              </div>
+              <div class="price-box">
+                <p class="product__exprice">299 ₽</p>
+                <p class="product__price">199 ₽</p>
+              </div>
+              <div class="product__box-cart">
+                <svg class="cart">
+                  <use xlink:href="images/sprite.svg#cart"></use>
+                </svg>
+              </div>
+            </article>
+          </li>
+
+          <li class="top-products__item mix category-grocery category-drinks">
+            <article class="product">
+              <div class="product__badge">
+                <p class="product__new">НОВИНКА</p>
+              </div>
+              <div class="heart-block">
+                <svg class="heart">
+                  <use xlink:href="images/sprite.svg#heart"></use>
+                </svg>
+              </div>
+              <div class="product__content">
+                <a class="product__link-img" href="#">
+                  <img class="product__img" width="300" height="225" src="images/products/coffee.jpg" alt="фото кофе">
+                  <div class="product__search"></div>
+                </a>
+                <a class="product__link-name">Кофе с коноплей органический Caffé Salomoni 250г</a>
+              </div>
+              <div class="price-box">
+                <p class="product__price">877 ₽</p>
+              </div>
+              <div class="product__box-cart">
+                <svg class="cart">
+                  <use xlink:href="images/sprite.svg#cart"></use>
+                </svg>
+              </div>
+            </article>
+          </li>
+
+          <li class="top-products__item mix category-vegetables">
+            <article class="product">
+              <div class="product__badge">
+                <p class="product__new">НОВИНКА</p>
+              </div>
+              <div class="heart-block">
+                <svg class="heart">
+                  <use xlink:href="images/sprite.svg#heart"></use>
+                </svg>
+              </div>
+              <div class="product__content">
+                <a class="product__link-img" href="#">
+                  <img class="product__img" width="300" height="225" src="images/products/pepper.jpg" alt="фото перец">
+                  <div class="product__search"></div>
+                </a>
+                <a class="product__link-name">Перец оранжевый, 1кг</a>
+              </div>
+              <div class="price-box">
+                <p class="product__price">349 ₽</p>
+              </div>
+              <div class="product__box-cart">
+                <svg class="cart">
+                  <use xlink:href="images/sprite.svg#cart"></use>
+                </svg>
+              </div>
+            </article>
+          </li>
+        </ul>
+        <div class="top-products__add">
+          <a class="top-products__add-btn" href="#">
+            Показать еще
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <a class="logo" href="#">
+          <img class="logo__img" src="images/logo.svg" width="200" height="60" alt="логотип">
+        </a>
+        <div class="footer-top__inner">
+          <form class="subscribe-form">
+            <label class="subscribe-form__label" for="input-email">Следите за нашими акциями</label>
+            <input class="subscribe-form__input" type="email" name="email" placeholder="email@email.com"
+              id="input-email" required>
+            <button class="subscribe-form__btn" type="submit">ПОДПИСАТЬСЯ</button>
+          </form>
+          <div class="footer-top__item footer-top__item--column">
+            <a class="footer-top__link" href="#">О нас</a>
+            <a class="footer-top__link" href="#">Контакты</a>
+            <a class="footer-top__link" href="#">Публичная оферта</a>
+            <a class="footer-top__link" href="#">Оплата и доставка</a>
+            <a class="footer-top__link" href="#">Вакансии</a>
+            <a class="footer-top__link" href="#">Акции</a>
+            <a class="footer-top__link" href="#">Отзывы</a>
+            <a class="footer-top__link" href="#">Новости</a>
+          </div>
+          <div class="footer-top__item">
+            <p class="footer-top__hotline">
+              Горячая линия <a class="footer-top__phone" href="tel:+7907288365">+7 907 288 365</a>
+            </p>
+            <address class="address">
+              Санкт-Петербург, ул. Ленина, 1
+            </address>
+            <ul class="footer-top__social-link">
+              <li class="footer-top__social-item">
+                <a class="footer-top__social-link" href="#">
+                  <svg class="facebook">
+                    <use xlink:href="images/sprite.svg#facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="footer-top__social-item">
+                <a class="footer-top__social-link" href="#">
+                  <svg class="youtube">
+                    <use xlink:href="images/sprite.svg#youtube"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="footer-top__social-item">
+                <a class="footer-top__social-link" href="#">
+                  <svg class="telegram">
+                    <use xlink:href="images/sprite.svg#telegram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="footer-top__social-item">
+                <a class="footer-top__social-link" href="#">
+                  <svg class="instagram">
+                    <use xlink:href="images/sprite.svg#instagram"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom__inner">
+          <p class="footer-bottom__copy">© 2021 ФРЕШОК</p>
+          <div class="footer-bottom__card">
+            <svg class="visa">
+              <use xlink:href="images/sprite.svg#visa"></use>
+            </svg>
+            <svg class="mcard">
+              <use xlink:href="images/sprite.svg#mcard"></use>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 
   <script src="js/main.min.js"></script>
