@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ФРЕШОК онлайн маркет</title>
+  <title>ФРЕШОК | главная страница</title>
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="css/style.min.css">
@@ -63,6 +63,7 @@
               </form>
             </li>
           </ul>
+
           <ul class="user-nav">
             <li class="user-nav__item">
               <a class="user-nav__link" href="#">
@@ -95,14 +96,16 @@
   </header>
 
   <main class="main">
+    <h1 class="sr-only">Фрешок онлайн маркет</h1>
     <section class="top-slider">
       <ul class="top-slider__list">
+
         <li class="top-slider__item" style="background-image: url('images/slider/slide1.jpg')" width="1920"
           height="600">
           <div class="container top-slider__item-inner">
-            <h1 class="top-slider__title">
+            <h2 class="top-slider__title">
               СВЕЖАЧОК ВАМ в ХАТУ <span>Скидка -50%</span>
-            </h1>
+            </h2>
             <p class="top-slider__text">
               Только с 7 по 13 июля скидка на сезонные фрукты и овощи до 50%. Торопитесь!
             </p>
@@ -111,12 +114,13 @@
             </a>
           </div>
         </li>
+
         <li class="top-slider__item" style="background-image: url('images/slider/slide2.jpg')" width="1920"
           height="600">
           <div class="container top-slider__item-inner">
-            <h1 class="top-slider__title">
+            <h2 class="top-slider__title">
               НАКРУТИ СЕБЕ ТОМАТОВ <span>АКЦИЯ: 3 кг по цене 1</span>
-            </h1>
+            </h2>
             <p class="top-slider__text">
               Только с 12 по 15 июля скидка на домашние помидорчики
             </p>
@@ -125,12 +129,13 @@
             </a>
           </div>
         </li>
+
         <li class="top-slider__item" style="background-image: url('images/slider/slide3.jpg')" width="1920"
           height="600">
           <div class="container top-slider__item-inner">
-            <h1 class="top-slider__title">
+            <h2 class="top-slider__title">
               Пусть остальные позеленеют от зависти <span>Распродажа зелени</span>
-            </h1>
+            </h2>
             <a class="top-slider__btn" href="#">
               Купить сейчас
             </a>
@@ -154,6 +159,7 @@
               Для заказов на сумму от 500 ₽
             </p>
           </li>
+
           <li class="info__item info__item--return">
             <h3 class="info__title">
               Возврат товара
@@ -162,6 +168,7 @@
               Если товары были испорчены
             </p>
           </li>
+
           <li class="info__item  info__item--support">
             <h3 class="info__title">
               Поддержка 24/7
@@ -211,11 +218,11 @@
                   <p class="product__discount">-50%</p>
                 </div>
               </div>
-              <div class="heart-block">
+              <button class="heart-block" type="button">
                 <svg class="heart">
                   <use xlink:href="images/sprite.svg#heart"></use>
                 </svg>
-              </div>
+              </button>
               <div class="product__content">
                 <a class="product__link-img" href="#">
                   <img class="product__img" src="images/products/pineapple.jpg" width="300" height="225"
@@ -231,21 +238,21 @@
                 <p class="product__price">999 ₽</p>
               </div>
 
-              <div class="product__box-cart">
+              <button class="product__box-cart" type="button">
                 <svg class="cart">
                   <use xlink:href="images/sprite.svg#cart"></use>
                 </svg>
-              </div>
+              </button>
             </article>
           </li>
 
           <li class="top-products__item mix category-fruits">
             <article class="product">
-              <div class="heart-block">
+              <button class="heart-block" type="button">
                 <svg class="heart">
                   <use xlink:href="images/sprite.svg#heart"></use>
                 </svg>
-              </div>
+              </button>
               <div class="product__content">
                 <a class="product__link-img" href="#">
                   <img class="product__img" src="images/products/lemon.jpg" width="300" height="225" alt="фото лимоны">
@@ -258,11 +265,11 @@
               <div class="price-box">
                 <p class="product__price">199 ₽</p>
               </div>
-              <div class="product__box-cart">
+              <button class="product__box-cart" type="button">
                 <svg class="cart">
                   <use xlink:href="images/sprite.svg#cart"></use>
                 </svg>
-              </div>
+              </button>
             </article>
           </li>
 
@@ -271,11 +278,11 @@
               <div class="product__badge">
                 <p class="product__hit">ХИТ</p>
               </div>
-              <div class="heart-block">
+              <button class="heart-block" type="button">
                 <svg class="heart">
                   <use xlink:href="images/sprite.svg#heart"></use>
                 </svg>
-              </div>
+              </button>
               <div class="product__content">
                 <a class="product__link-img" href="#">
                   <img class="product__img" src="images/products/dragon-fruit.jpg" width="300" height="234"
@@ -287,21 +294,21 @@
               <div class="price-box">
                 <p class="product__price">1019 ₽</p>
               </div>
-              <div class="product__box-cart">
+              <button class="product__box-cart" type="button">
                 <svg class="cart">
                   <use xlink:href="images/sprite.svg#cart"></use>
                 </svg>
-              </div>
+              </button>
             </article>
           </li>
 
           <li class="top-products__item mix category-grocery">
             <article class="product">
-              <div class="heart-block">
+              <button class="heart-block" type="button">
                 <svg class="heart">
                   <use xlink:href="images/sprite.svg#heart"></use>
                 </svg>
-              </div>
+              </button>
               <div class="product__content">
                 <a class="product__link-img" href="#">
                   <img class="product__img" src="images/products/ketchup.jpg" width="300" height="225"
@@ -313,11 +320,11 @@
               <div class="product__box-price">
                 <p class="product__price">600 ₽</p>
               </div>
-              <div class="product__box-cart">
+              <button class="product__box-cart" type="button">
                 <svg class="cart">
                   <use xlink:href="images/sprite.svg#cart"></use>
                 </svg>
-              </div>
+              </button>
             </article>
           </li>
 
@@ -326,11 +333,11 @@
               <div class="product__badge">
                 <p class="product__hit">ХИТ</p>
               </div>
-              <div class="heart-block">
+              <button class="heart-block" type="button">
                 <svg class="heart">
                   <use xlink:href="images/sprite.svg#heart"></use>
                 </svg>
-              </div>
+              </button>
               <div class="product__content">
                 <a class="product__link-img" href="#">
                   <img class="product__img" width="300" height="225" src="images/products/carrot.jpg"
@@ -342,11 +349,11 @@
               <div class="price-box">
                 <p class="product__price">49 ₽</p>
               </div>
-              <div class="product__box-cart">
+              <button class="product__box-cart" type="button">
                 <svg class="cart">
                   <use xlink:href="images/sprite.svg#cart"></use>
                 </svg>
-              </div>
+              </button>
             </article>
           </li>
 
@@ -355,11 +362,11 @@
               <div class="product__badge">
                 <p class="product__discount">-30%</p>
               </div>
-              <div class="heart-block">
+              <button class="heart-block" type="button">
                 <svg class="heart">
                   <use xlink:href="images/sprite.svg#heart"></use>
                 </svg>
-              </div>
+              </button>
               <div class="product__content">
                 <a class="product__link-img" href="#">
                   <img class="product__img" width="300" height="215" src="images/products/juice.jpg" alt="фото напиток">
@@ -373,11 +380,11 @@
                 <p class="product__exprice">299 ₽</p>
                 <p class="product__price">199 ₽</p>
               </div>
-              <div class="product__box-cart">
+              <button class="product__box-cart" type="button">
                 <svg class="cart">
                   <use xlink:href="images/sprite.svg#cart"></use>
                 </svg>
-              </div>
+              </button>
             </article>
           </li>
 
@@ -386,11 +393,11 @@
               <div class="product__badge">
                 <p class="product__new">НОВИНКА</p>
               </div>
-              <div class="heart-block">
+              <button class="heart-block" type="button">
                 <svg class="heart">
                   <use xlink:href="images/sprite.svg#heart"></use>
                 </svg>
-              </div>
+              </button>
               <div class="product__content">
                 <a class="product__link-img" href="#">
                   <img class="product__img" width="300" height="225" src="images/products/coffee.jpg" alt="фото кофе">
@@ -401,11 +408,11 @@
               <div class="price-box">
                 <p class="product__price">877 ₽</p>
               </div>
-              <div class="product__box-cart">
+              <button class="product__box-cart" type="button">
                 <svg class="cart">
                   <use xlink:href="images/sprite.svg#cart"></use>
                 </svg>
-              </div>
+              </button>
             </article>
           </li>
 
@@ -414,11 +421,11 @@
               <div class="product__badge">
                 <p class="product__new">НОВИНКА</p>
               </div>
-              <div class="heart-block">
+              <button class="heart-block" type="button">
                 <svg class="heart">
                   <use xlink:href="images/sprite.svg#heart"></use>
                 </svg>
-              </div>
+              </button>
               <div class="product__content">
                 <a class="product__link-img" href="#">
                   <img class="product__img" width="300" height="225" src="images/products/pepper.jpg" alt="фото перец">
@@ -429,11 +436,11 @@
               <div class="price-box">
                 <p class="product__price">349 ₽</p>
               </div>
-              <div class="product__box-cart">
+              <button class="product__box-cart" type="button">
                 <svg class="cart">
                   <use xlink:href="images/sprite.svg#cart"></use>
                 </svg>
-              </div>
+              </button>
             </article>
           </li>
         </ul>
@@ -459,16 +466,41 @@
               id="input-email" required>
             <button class="subscribe-form__btn" type="submit">ПОДПИСАТЬСЯ</button>
           </form>
-          <div class="footer-top__item footer-top__item--column">
-            <a class="footer-top__link" href="#">О нас</a>
-            <a class="footer-top__link" href="#">Контакты</a>
-            <a class="footer-top__link" href="#">Публичная оферта</a>
-            <a class="footer-top__link" href="#">Оплата и доставка</a>
-            <a class="footer-top__link" href="#">Вакансии</a>
-            <a class="footer-top__link" href="#">Акции</a>
-            <a class="footer-top__link" href="#">Отзывы</a>
-            <a class="footer-top__link" href="#">Новости</a>
-          </div>
+
+          <ul class="footer-top__item footer-top__item--column">
+            <li class="footer-top__info">
+              <a class="footer-top__link" href="#">О нас</a>
+            </li>
+
+            <li class="footer-top__info">
+              <a class="footer-top__link" href="#">Контакты</a>
+            </li>
+
+            <li class="footer-top__info">
+              <a class="footer-top__link" href="#">Публичная оферта</a>
+            </li>
+
+            <li class="footer-top__info">
+              <a class="footer-top__link" href="#">Оплата и доставка</a>
+            </li>
+
+            <li class="footer-top__info">
+              <a class="footer-top__link" href="#">Вакансии</a>
+            </li>
+
+            <li class="footer-top__info">
+              <a class="footer-top__link" href="#">Акции</a>
+            </li>
+
+            <li class="footer-top__info">
+              <a class="footer-top__link" href="#">Отзывы</a>
+            </li>
+
+            <li class="footer-top__info">
+              <a class="footer-top__link" href="#">Новости</a>
+            </li>   
+          </ul>
+
           <div class="footer-top__item">
             <p class="footer-top__hotline">
               Горячая линия <a class="footer-top__phone" href="tel:+7907288365">+7 907 288 365</a>
@@ -484,6 +516,7 @@
                   </svg>
                 </a>
               </li>
+
               <li class="footer-top__social-item">
                 <a class="footer-top__social-link" href="#">
                   <svg class="youtube">
@@ -491,6 +524,7 @@
                   </svg>
                 </a>
               </li>
+              
               <li class="footer-top__social-item">
                 <a class="footer-top__social-link" href="#">
                   <svg class="telegram">
