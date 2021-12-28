@@ -1,0 +1,200 @@
+.product {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 408px;
+  padding: 56px 0 18px;
+  border: 1px solid rgba(17, 17, 17, 0.2);
+  border-radius: 6px;
+  transition: border 0.3s;
+  &:hover {
+    border: 1px solid #63A60E;
+  }
+  &__badge {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 10px;
+    left: 10px;
+  }
+  &__new,
+  &__hit,
+  &__discount {
+    width: fit-content;
+    @extend %opensans-700;
+    font-size: 10px;
+    text-transform: uppercase;
+    line-height: 1;
+    color: $white;
+    padding: 3px 6px;
+    margin-bottom: 7px;
+    border-radius: 6px;
+  }
+  &__new {
+    background-color: $green-900;
+  }
+  &__hit {
+    background-color: $orange-900;
+  }
+  &__discount {
+    background-color: $red-900;
+  }
+  &__link {
+    position: relative;
+    
+  }
+  &__link::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;    
+    left: 50%;
+    top: 50%;
+    background-image: url('../images/sprite.svg#search');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: invert(58%) sepia(43%) saturate(4587%) hue-rotate(52deg) brightness(97%) contrast(89%);
+    background-color: $white;
+    padding: 24px 24px 24px 24px;
+    border-radius: 50%;
+    transform: translate(-50%, -60%);
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.5s;
+  }
+  &__link::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: all 0.5s;
+  }
+  &__link:hover::before,
+  &__link:hover::after {
+    opacity: 1;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100px;
+    padding: 0 18px 0;
+  }
+  &__name {
+    @extend %opensans-600;
+  }
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+  }
+  &__price-box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__price,
+  &__exprice {
+    line-height: 1;
+  }
+  &__exprice {
+    position: relative;
+    margin-bottom: 4px;
+    color: $silver-600;    
+  }
+  &__exprice::before {
+    content: "";
+    position: absolute;
+    border-bottom: 1px solid $silver-600;
+    width: 100%;
+    height: 50%;
+    transform: rotate(-12deg);
+  }
+  &__exprice::after,
+  &__price::after {
+    content: " ₽";
+  }
+  &__cart-btn {
+    position: relative;
+    padding: 16px;
+    background-color: $green-900;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+  }
+  &__cart-btn::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    background-image: url('../images/sprite.svg#cart');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: invert(100%) sepia(8%) saturate(1173%) hue-rotate(275deg) brightness(110%) contrast(106%);
+    transform: translate(-50%, -50%);
+  }
+  &__cart-btn:hover {
+    background-color: #4D800C;
+  }
+  &__cart-btn:focus {
+    box-shadow: 0 0 0 4px #E0EDCF;
+  }
+  &__cart-btn:active {
+    box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.heart-block {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 8px 7px 2px 7px;
+  border-radius: 3px;
+  transition: box-shadow 0.3s;
+}
+
+// У сердца фокус здесь!!!
+
+.heart-block:focus {
+  background-color: #fff;
+  box-shadow: 0 0 0 3px $green-200;
+}
+
+.heart {
+  width: 32px;
+  height: 32px;
+  fill: $silver-600;
+  transition: fill 0.3s;
+}
+
+.heart:hover {
+  fill: $yellow-900;
+  cursor: pointer;
+}
+
+.heart:hover {
+  fill: $yellow-900;
+  cursor: pointer;
+}
+
+.heart:active {
+  fill: rgba($yellow-900, 0.5);
+}
+
+.cart {
+  width: 16px;
+  height: 16px;  
+  fill: $white;
+}
+
+.cart:active {
+  fill: rgba(255, 255, 255, 0.5);
+}

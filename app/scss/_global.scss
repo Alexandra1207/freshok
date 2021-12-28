@@ -45,3 +45,123 @@ body {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+.hidden {
+  display: none;
+}
+
+.link {
+  transition: opacity 0.3s;
+}
+.link:hover {
+    opacity: 0.7;
+}
+.link:focus {
+  outline: transparent;
+  box-shadow: 0 0 0 3px $green-100;
+  border-radius: 3px;
+}
+.link:active {
+    color: $green-200;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  @extend %opensans-400;
+  font-size: 18px;
+  color: $white;
+  background-color: $green-900;
+  border-radius: 6px;
+  border: transparent;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+.btn:hover {
+    background-color: #4D810C;
+}
+.btn:focus {
+    box-shadow: 0 0 0 4px $green-200;
+}
+.btn:active {
+    color: rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.btn-white {
+  display: inline-block;
+  padding: 12px 24px;
+  @extend %opensans-400;
+  font-size: 18px;
+  color: $green-900;
+  background-color: $white;
+  border: 1px solid $green-900;  
+  border-radius: 6px;
+  transition: background-color 0.3s; 
+}
+.btn-white:hover {
+    background-color: $green-100;
+}
+.btn-white:focus {
+  box-shadow: 0 0 0 4px rgba($green-900, 0.5);
+}
+.btn-white:active {
+    color: rgba(99, 166, 14, 0.5);
+    box-shadow: inset 0 10px 4px rgba(0, 0, 0, 0.1);
+} 
+
+.social {
+  display: flex;
+  align-items: center;
+  &__item {
+    border-radius: 3px; 
+  }
+  &__item:focus {
+    box-shadow: 0 0 0 3px #E0EDCF;
+  }
+  &__item:not(:last-child) {
+    margin-right: 12px;
+  }
+  &__facebook {
+    width: 33px;
+    height: 32px;
+  }
+  
+  &__youtube,
+  &__telegram,
+  &__instagram {
+    width: 31px;
+    height: 32px;
+  }
+  
+  &__facebook,
+  &__youtube,
+  &__telegram,
+  &__instagram {
+    fill: $white;
+    transition: opacity 0.3s;
+  }
+  
+  &__facebook:hover,
+  &__youtube:hover,
+  &__telegram:hover,
+  &__instagram:hover {
+    opacity: 0.7;
+  }
+
+  &__facebook:focus,
+  &__youtube:focus,
+  &__telegram:focus,
+  &__instagram:focus {
+    box-shadow: 0px 0px 0px 3px #E0EDCF;
+    border-radius: 3px;
+  }
+
+  
+  &__facebook:active,
+  &__youtube:active,
+  &__telegram:active,
+  &__instagram:active {
+    fill: $green-200;
+  }
+}
+
