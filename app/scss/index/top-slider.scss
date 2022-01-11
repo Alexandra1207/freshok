@@ -1,0 +1,107 @@
+.top-slider {
+  &__item {
+    // width: 1920px;
+    // height: 600px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  &__container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 600px;
+    padding: 50px 0;
+  }
+  &__inner {
+    max-width: 1290px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 24px 0 23px 24px;
+    background-color: rgba($white, 0.8);
+    border-radius: 4px;
+  }
+  &__title {
+    max-width: 770px;
+    margin-bottom: 5px;
+    @extend %ruda-900;
+    font-size: 60px;
+    line-height: 1.3;
+    text-transform: uppercase;
+  }
+  &__title span {
+    color: $red-900;
+  }
+  &__text {
+    margin-bottom: 35px;
+    font-size: 16px;
+    letter-spacing: 0;
+  }
+  .slick-prev,
+  .slick-next {
+    position: absolute;
+    top: 50%;
+    padding: 13px;
+    background-color: rgba($white, 0.8);
+    border-radius: 6px;
+    transform: translateY(-50%);
+    z-index: 2;
+    transition: background-color 0.3s;
+  }
+
+  .slick-prev {
+    left: 57px;
+  }
+
+  .slick-next {
+    right: 57px;
+  }
+
+  .arrow-left,
+  .arrow-right {
+    width: 40px;
+    height: 30px;
+    fill: $dark-500;
+    transition: fill 0.3s;
+  }
+
+  .slick-prev:focus,
+  .slick-next:focus {
+    background-color: #f2f2f2;
+    box-shadow: 0 0 0 3px rgba(99, 166, 14, 0.5);
+  }
+
+  .slick-prev:hover,
+  .slick-next:hover {
+    background-color: $green-200;
+  }
+
+  .slick-prev:hover .arrow-left,
+  .slick-next:hover .arrow-right {
+    fill: $green-900;
+  }
+
+  .slick-prev:active,
+  .slick-next:active {
+    background-color: #f3f3f2;
+  }
+
+  .slick-prev:active .arrow-left,
+  .slick-next:active .arrow-right {
+    fill: $green-900;
+  }
+
+  .slick-disabled,
+  .slick-disabled:hover,
+  .slick-disabled:active {
+    background-color: rgba($white, 0.8);
+  }
+
+  .slick-disabled .arrow-right,
+  .slick-disabled .arrow-left,
+  .slick-disabled:hover .arrow-left,
+  .slick-disabled:hover .arrow-right,
+  .slick-disabled:active .arrow-left,
+  .slick-disabled:active .arrow-right {
+    fill: $silver-600;
+  }
+}

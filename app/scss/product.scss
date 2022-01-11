@@ -9,7 +9,7 @@
   border-radius: 6px;
   transition: border 0.3s;
   &:hover {
-    border: 1px solid #63A60E;
+    border: 1px solid $green-900;
   }
   &__badge {
     position: absolute;
@@ -17,6 +17,7 @@
     flex-direction: column;
     top: 10px;
     left: 10px;
+    z-index: 2;
   }
   &__new,
   &__hit,
@@ -42,28 +43,24 @@
   }
   &__link {
     position: relative;
-    
   }
-  &__link::before {
-    content: "";
+
+  &__search {
     position: absolute;
-    width: 20px;
-    height: 20px;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 40%;
     left: 50%;
-    top: 50%;
-    background-image: url('../images/sprite.svg#search');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    filter: invert(58%) sepia(43%) saturate(4587%) hue-rotate(52deg) brightness(97%) contrast(89%);
-    background-color: $white;
-    padding: 24px 24px 24px 24px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    transform: translate(-50%, -60%);
-    z-index: 1;
+    background-color: $white;
+    transform: translate(-50%, -50%);
     opacity: 0;
     transition: all 0.5s;
   }
+
   &__link::after {
     content: "";
     position: absolute;
@@ -75,10 +72,13 @@
     opacity: 0;
     transition: all 0.5s;
   }
-  &__link:hover::before,
-  &__link:hover::after {
+
+  &:hover &__link::after,
+  &:focus &__link::after,
+  &:hover &__search {
     opacity: 1;
   }
+
   &__content {
     display: flex;
     flex-direction: column;
@@ -86,8 +86,16 @@
     height: 100px;
     padding: 0 18px 0;
   }
-  &__name {
+
+  &__name:focus {
+    opacity: 0.7;
+  }
+  &__title {
     @extend %opensans-600;
+    font-size: 14px;
+    line-height: 1.4;
+    letter-spacing: 0.03em;
+    color: $dark-900;
   }
   &__bottom {
     display: flex;
@@ -106,7 +114,7 @@
   &__exprice {
     position: relative;
     margin-bottom: 4px;
-    color: $silver-600;    
+    color: $silver-600;
   }
   &__exprice::before {
     content: "";
@@ -134,7 +142,7 @@
     height: 16px;
     top: 50%;
     left: 50%;
-    background-image: url('../images/sprite.svg#cart');
+    background-image: url("../images/sprite.svg#cart");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -142,14 +150,56 @@
     transform: translate(-50%, -50%);
   }
   &__cart-btn:hover {
-    background-color: #4D800C;
+    background-color: #4d800c;
   }
   &__cart-btn:focus {
-    box-shadow: 0 0 0 4px #E0EDCF;
+    box-shadow: 0 0 0 4px #e0edcf;
   }
   &__cart-btn:active {
     box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
   }
+  &__availability {
+    @extend %opensans-600;
+    font-size: 10px;
+    line-height: 1;
+  }
+  &__available {
+    color: $green-900;
+  }
+  &__run-out {
+    color: $red-900;
+  }
+  &__not-have {
+    color: $silver-600;
+  }
+  &__availability {
+    margin-bottom: 5px;
+  }
+  &__star-box {
+    position: relative;
+    padding-right: 20px;
+    @extend %opensans-700;
+    line-height: 1;
+  }
+  &__star-box::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 0;
+    right: 0;
+    background-image: url("../images/sprite.svg#star");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter: invert(71%) sepia(88%) saturate(1345%) hue-rotate(356deg) brightness(97%) contrast(109%);
+  }
+}
+
+.search {
+  width: 20px;
+  height: 20px;
+  fill: $green-900;
 }
 
 .heart-block {
@@ -160,8 +210,6 @@
   border-radius: 3px;
   transition: box-shadow 0.3s;
 }
-
-// У сердца фокус здесь!!!
 
 .heart-block:focus {
   background-color: #fff;
@@ -191,10 +239,53 @@
 
 .cart {
   width: 16px;
-  height: 16px;  
+  height: 16px;
   fill: $white;
 }
 
 .cart:active {
   fill: rgba(255, 255, 255, 0.5);
+}
+
+.product-mini {
+  position: relative;
+  display: flex;
+  height: 124px;
+  padding: 12px 12px 6px;
+  background-color: $white;
+  border: 1px solid $silver-600;
+  border-radius: 6px;
+  transition: border 0.3s;
+  &:hover {
+    border: 1px solid $green-900;
+  }
+  &__badge {
+    top: 13px;
+  }
+  &__link {
+    margin-right: 12px;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 164px;
+    width: 100%;
+  }
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__price {
+    margin-right: 8px;
+    font-size: 20px;
+  }
+  &__price::after {
+    font-size: 14px;
+  }
+  &__exprice {
+    display: inline-block;
+    font-size: 12px;
+  }
 }

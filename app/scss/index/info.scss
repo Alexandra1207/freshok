@@ -1,0 +1,48 @@
+.info {
+  padding: 48px 0 30px;
+  background-color: $silver-100;
+  &__list {
+    display: flex;
+    max-width: 950px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  &__item {
+    position: relative;
+    padding-left: 90px;
+    letter-spacing: 0;
+  }
+  &__item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -8px;
+    width: 75px;
+    height: 51px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: invert(58%) sepia(43%) saturate(4587%) hue-rotate(52deg) brightness(97%) contrast(89%);
+  }
+  &__item:not(:last-child) {
+    margin-right: 48px;
+  } 
+  &__item--delivery::before {
+    background-image: url(../images/sprite.svg#scooter);
+  }
+  &__item--return::before {
+    background-image: url(../images/sprite.svg#return-box);
+  }
+  &__item--support::before {
+    background-image: url(../images/sprite.svg#24h);
+  }
+  &__title {
+    margin-bottom: 6px;
+    @extend %opensans-600;
+    font-size: 16px;
+    color: $dark-900;
+  }
+  &__text {
+    max-width: 190px;
+  }
+}  
+

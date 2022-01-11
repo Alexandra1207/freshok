@@ -51,13 +51,4 @@ $white: #FFFFFF;
   font-weight: 900;
 }
 
-%btn {
-  display: inline-block;
-  padding: 12px 24px;
-  @extend %opensans-400;
-  font-size: 18px;
-  color: $white;
-  background-color: $green-900;
-  border-radius: 6px;
-  border: transparent;
-}
+

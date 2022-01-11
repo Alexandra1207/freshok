@@ -1,17 +1,18 @@
-@import 'fonts';
-@import 'vars';
-@import 'reset';
-@import 'libs';
-@import 'global';
-@import '../index/header.scss';
-@import '../index/top-slider.scss';
-@import '../index/info.scss';
-@import '../index/top.scss';
-@import '../index/footer.scss';
-@import 'product.scss';
+@import "fonts";
+@import "vars";
+@import "reset";
+@import "libs";
+@import "global";
+@import "header";
+@import "index/top-slider";
+@import "index/info";
+@import "index/top";
+@import "index/banners";
+@import "index/promo";
+@import "index/partners";
+@import "index/news";
+@import "footer";
+@import "product";
 
 
-@import 'media';
-
-
-
+@import "media";

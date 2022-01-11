@@ -1,0 +1,29 @@
+.partners {
+  padding: 72px 0 66px;
+  min-width: 0;
+
+  .slick-track {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 0;
+  }
+
+  &__item {
+    padding: 0 60px 0 55px;
+  }
+
+  &__link {
+    opacity: 0.5;
+    transition: opacity 0.3s;
+  }
+  &__link:hover {
+    opacity: 1;
+  }
+}
+
+.swiper {
+  padding: 0 60px;
+}
+
+
