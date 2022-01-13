@@ -35,36 +35,26 @@ $(function () {
 
 });
 
-import Swiper, { Navigation, Pagination } from 'swiper';
-
-Swiper.use([Navigation, Pagination]);
 
 const swiper = new Swiper('.swiper', {
-  // Optional parameters
-  // direction: 'vertical',
   loop: true,
-
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-  },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-
-  // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
+  slidesPerView: 6,
+  spaceBetween: 140,
+  // autoplay: true,
+  // autoplaySpeed: 3000,
+  // slidesPerGroup: 6 
 });
 
 
 
-// для подключения через линк
+let overflow = document.querySelectorAll('.overflow')[0].innerHTML;
+console.log(overflow);
 
-// new Swiper('.swiper', {
-//   slidesPerView: 6,
-// });
+if (overflow.length > 105) {
+  overflow = overflow.substring(0, 105) + '...';
+}
+console.log(overflow);
+
+document.querySelectorAll('.overflow')[0].innerHTML = overflow;
+
+

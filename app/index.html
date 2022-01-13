@@ -8,7 +8,6 @@
   <title>ФРЕШОК | главная страница</title>
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-  <!-- <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"> -->
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 
@@ -110,7 +109,8 @@
           <div class="top-slider__container">
             <div class="top-slider__inner">
               <h2 class="top-slider__title">
-                СВЕЖАЧОК ВАМ в ХАТУ <span>Скидка -50%</span>
+                СВЕЖАЧОК ВАМ в ХАТУ
+                <span>Скидка -50%</span>
               </h2>
               <p class="top-slider__text">
                 Только с 7 по 13 июля скидка на сезонные фрукты и овощи до 50%. Торопитесь!
@@ -183,8 +183,7 @@
             <p class="info__text">
               Лучшие операторы
             </p>
-          </li>
-
+          </li>     
         </ul>
       </div>
     </section>
@@ -208,9 +207,8 @@
             </li>
             <li class="filter__item">
               <button class="filter__btn" data-filter=".grocery" type="button">БАКАЛЕЯ</button>
-            </li>
+            </li>            
           </ul>
-
 
           <ul class="filter__content">
             <li class="top__product mix fruits">
@@ -416,8 +414,8 @@
                 </div>
                 <div class="product__content">
                   <a class="product__name" href="#">
-                    <h3 class="product__title">Напиток сокосодержащий Sanpellegrino Aranciata Orange Красный апельсин
-                      безалкогольн...</h3>
+                    <h3 class="product__title overflow">Напиток сокосодержащий Sanpellegrino Aranciata Orange Красный апельсин
+                      безалкогольный</h3>
 
                   </a>
                   <div class="product__bottom">
@@ -863,11 +861,12 @@
 
     <!-- Код для slick slider -->
 
-    <!-- <section class="partners">
+            <!-- Не могу выровнять элементы. До подключения слайдера было нормально. Это максимльно, что я смогла добиться со
+            slick-slider, уже не понимаю как -->
+
+   <!-- <section class="partners">
       <h2 class="sr-only">Партнеры</h2>
       <div class="container">
-
-        Не могу выровнять элементы. До подключения слайдера было нормально. Это максимльно, что я смогла добиться со slick-slider, уже не понимаю как
 
         <ul class="partners__list">
           <li class="partners__item">
@@ -910,53 +909,7 @@
       </div>
     </section> -->
 
-    <!-- код для swiper. Списком. Не работает -->
-
-    <!-- <section class="partners">
-      <h2 class="sr-only">Партнеры</h2>
-      <div class="container">
-        <div class="swiper">
-          <ul class="partners__list swiper-wrapper">
-            <li class="partners__item swiper-slide">
-              <img class="partners__img" src="images/partners/sprite.svg" alt="логотип спрайта">
-            </li>
-            <li class="partners__item swiper-slide">
-              <img class="partners__img" src="images/partners/dr-pepper.svg" alt="логотип доктор пепер">
-            </li>
-            <li class="partners__item swiper-slide">
-              <img class="partners__img" src="images/partners/coca-cola.svg" alt="логотип кока-колы">
-            </li>
-            <li class="partners__item swiper-slide">
-              <img class="partners__img" src="images/partners/pepsi.svg" alt="логотип пепси-колы">
-            </li>
-            <li class="partners__item swiper-slide">
-              <img class="partners__img" src="images/partners/redbull.svg" alt="логотип редбул">
-            </li>
-            <li class="partners__item swiper-slide">
-              <img class="partners__img" src="images/partners/fanta.svg" alt="логотип фанта">
-            </li>
-            <li class="partners__item swiper-slide">
-              <img class="partners__img" src="images/partners/sprite.svg" alt="логотип спрайта">
-            </li>
-            <li class="partners__item swiper-slide">
-              <img class="partners__img" src="images/partners/dr-pepper.svg" alt="логотип доктор пепер">
-            </li>
-            <li class="partners__item swiper-slide">
-              <img class="partners__img" src="images/partners/coca-cola.svg" alt="логотип кока-колы">
-            </li>
-            <li class="partners__item swiper-slide">
-              <img class="partners__img" src="images/partners/pepsi.svg" alt="логотип пепси-колы">
-            </li>
-            <li class="partners__item swiper-slide">
-              <img class="partners__img" src="images/partners/redbull.svg" alt="логотип редбул">
-            </li>
-            <li class="partners__item swiper-slide">
-              <img class="partners__img" src="images/partners/fanta.svg" alt="логотип фанта">
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section> -->
+    
 
 
     <section class="partners">
@@ -1033,10 +986,7 @@
         </div>
 
       </div>
-    </section>
-
-
-
+    </section> 
 
     <section class="news">
       <div class="container">
@@ -1052,7 +1002,8 @@
                 <span>15</span>
               </div>
             </div>
-            <a class="news__link" href="#">Событие этого лета: распродажа сезонных фруктов в онлайн-маркете ФрешОК.
+            <a class="news__link overflow" href="#">Событие этого лета: распродажа сезонных фруктов в онлайн-маркете ФрешОК.
+              Торопись, пока всё не разобрали! Событие этого лета: распродажа сезонных фруктов в онлайн-маркете ФрешОК.
               Торопись, пока всё не разобрали!</a>
           </li>
           <li class="news__item">
@@ -1124,14 +1075,16 @@
             <li class="footer__item">
               <a class="link" href="#">Новости</a>
             </li>
+            
           </ul>
 
           <div class="footer__contacts">
             <address class="footer__address">
               <a class="footer__hotline link" href="tel:+7907288365">Горячая линия +7 907 288 365</a>
-              <a class="link" href="#">
+              <a class="footer__address-link link" href="#">
                 Санкт-Петербург, ул. Ленина, 1
-              </a>
+              </a>                        
+              
             </address>
             <ul class="social">
               <li class="social__item">
@@ -1164,6 +1117,7 @@
                   </svg>
                 </a>
               </li>
+              
             </ul>
           </div>
         </div>
@@ -1187,7 +1141,6 @@
     </div>
   </footer>
 
-  <!-- <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script> -->
   <script src="js/main.min.js"></script>
 </body>
 

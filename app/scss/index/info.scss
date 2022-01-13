@@ -1,14 +1,18 @@
 .info {
-  padding: 48px 0 30px;
+  padding: 48px 0 10px;
   background-color: $silver-100;
   &__list {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     max-width: 950px;
     width: 100%;
     margin: 0 auto;
+    padding: 0 60px 0 0;
   }
   &__item {
     position: relative;
+    margin-bottom: 20px;
     padding-left: 90px;
     letter-spacing: 0;
   }
@@ -23,9 +27,6 @@
     background-repeat: no-repeat;
     filter: invert(58%) sepia(43%) saturate(4587%) hue-rotate(52deg) brightness(97%) contrast(89%);
   }
-  &__item:not(:last-child) {
-    margin-right: 48px;
-  } 
   &__item--delivery::before {
     background-image: url(../images/sprite.svg#scooter);
   }

@@ -70,16 +70,14 @@
   }
 
   &__item {
-    // 
     padding: 3px 0;
-    // padding-top: 3px;
     margin-bottom: 12px;
     white-space: nowrap;
     transition: opacity 0.3s;
   }
  
   &__hotline,
-  &__address {
+  &__address-link {
     display: block;
     font-style: normal;
     margin-bottom: 15px;
