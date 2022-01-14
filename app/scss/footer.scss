@@ -22,9 +22,8 @@
 
   &__label {
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
     padding-top: 3px;
-    line-height: 1;
   }
 
   &__input {
@@ -37,7 +36,7 @@
     border-radius: 6px 0 0 6px;
   }
   &__input:focus {
-    box-shadow: 0 0 0 3px #E0EDCF;
+    box-shadow: 0 0 0 3px #e0edcf;
   }
 
   &__btn {
@@ -52,10 +51,10 @@
     transition: background-color 0.3s;
   }
   &__btn:hover {
-    background-color: #4D800C;
+    background-color: #4d800c;
   }
   &__btn:focus {
-    box-shadow: 0 0 0 4px #E0EDCF;
+    box-shadow: 0 0 0 4px #e0edcf;
   }
   &__btn:active {
     color: rgba($white, 0.5);
@@ -75,7 +74,7 @@
     white-space: nowrap;
     transition: opacity 0.3s;
   }
- 
+
   &__hotline,
   &__address-link {
     display: block;
@@ -109,6 +108,3 @@
     transition: opacity 0.3s;
   }
 }
-
-
-

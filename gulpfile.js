@@ -9,7 +9,7 @@ const del          = require('del');
 const browserSync  = require('browser-sync').create();
 const svgSprite    = require('gulp-svg-sprite');
 const cheerio      = require('gulp-cheerio');
-// const Swiper = require('swiper');
+
 
 
 function browsersync() {

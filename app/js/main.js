@@ -5,8 +5,8 @@ $(function () {
   $('.top-slider__list').slick({
     prevArrow: '<button type="button" class="slick-prev"><svg class="arrow-left"><use xlink:href="images/sprite.svg#arrow-left"></use></svg></button>',
     nextArrow: '<button type="button" class="slick-next"><svg class="arrow-right"><use xlink:href="images/sprite.svg#arrow-right"></use></svg></button>',
-    // autoplay: true,
-    // autoplaySpeed: 2000,
+    autoplay: true,
+    autoplaySpeed: 2000,
     infinite: false
   });
 
@@ -28,8 +28,8 @@ $(function () {
     infinite: true,
     slidesToShow: 6,
     slidesToScroll: 6,
-    // autoplay: true,
-    // autoplaySpeed: 2000
+    autoplay: true,
+    autoplaySpeed: 2000
   })
 
 
@@ -40,21 +40,36 @@ const swiper = new Swiper('.swiper', {
   loop: true,
   slidesPerView: 6,
   spaceBetween: 140,
-  // autoplay: true,
-  // autoplaySpeed: 3000,
-  // slidesPerGroup: 6 
+  autoplay: true,
+  autoplaySpeed: 3000,
+  slidesPerGroup: 6 
 });
 
 
+const overflowCard = document.querySelectorAll('.overflow-card');
 
-let overflow = document.querySelectorAll('.overflow')[0].innerHTML;
-console.log(overflow);
+overflowCard.forEach(element => {
+  if (element.textContent.length > 106) {
+    element.textContent = element.textContent.substring(0, 106) + '...';
+  }
+});
 
-if (overflow.length > 105) {
-  overflow = overflow.substring(0, 105) + '...';
-}
-console.log(overflow);
 
-document.querySelectorAll('.overflow')[0].innerHTML = overflow;
+const overflowCardMini = document.querySelectorAll('.overflow-cardmini');
+
+overflowCardMini.forEach(element => {
+  if (element.textContent.length > 49) {
+    element.textContent = element.textContent.substring(0, 49) + '...';
+  }
+});
+
+
+const overflow = document.querySelectorAll('.overflow');
+
+overflow.forEach(element => {
+  if (element.textContent.length > 145) {
+    element.textContent = element.textContent.substring(0, 145) + '...';
+  }
+});
 
 

@@ -17,7 +17,7 @@
     text-transform: uppercase;
     padding: 0 6px 2px 0;
     border-bottom: 2px solid $green-900;
-    transition: opasity 0.3s;
+    transition: opaсity 0.3s;
   }
   &__subtitle:hover {
     opacity: 0.7;
@@ -77,7 +77,7 @@
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0;
-    transition: 0.7;
+    transition: opacity 0.7;
   }
   &__link:hover {
     opacity: 0.7;

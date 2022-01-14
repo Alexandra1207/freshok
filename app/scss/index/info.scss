@@ -4,9 +4,7 @@
   &__list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 950px;
-    width: 100%;
+    justify-content: center;
     margin: 0 auto;
     padding: 0 60px 0 0;
   }
@@ -15,6 +13,9 @@
     margin-bottom: 20px;
     padding-left: 90px;
     letter-spacing: 0;
+  }
+  &__item:not(:last-child) {
+    margin-right: 50px;
   }
   &__item::before {
     content: "";

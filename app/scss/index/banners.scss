@@ -42,7 +42,7 @@
     line-height: 1;
     padding-bottom: 5px;
     border-bottom: 2px solid $dark-500;
-    transition: opacity;
+    transition: opacity 0.3s;
   }
   &__item--white {
     color: $white;
