@@ -36,7 +36,7 @@
     border-radius: 6px 0 0 6px;
   }
   &__input:focus {
-    box-shadow: 0 0 0 3px #e0edcf;
+    outline: 3px solid #e0edcf;
   }
 
   &__btn {

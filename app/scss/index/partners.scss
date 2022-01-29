@@ -1,6 +1,14 @@
 .partners {
   padding: 72px 0;
   min-width: 0;
+  &__link {
+    opacity: 0.5;
+    transition: opacity 0.3s;
+  }
+  &__link:hover,
+  &__link:focus {
+    opacity: 1;
+  }
 
   .slick-track {
     display: flex;
@@ -8,23 +16,13 @@
     align-items: center;
     min-width: 0;
   }
-
-  &__link {
-    opacity: 0.5;
-    transition: opacity 0.3s;
+  .swiper {
+    display: flex;
+    align-items: center;
+    padding: 0 55px;
   }
-  &__link:hover {
-    opacity: 1;
+
+  .swiper-slide {
+    margin: auto;
   }
 }
-
-.swiper {
-  display: flex;
-  align-items: center;
-  padding: 0 55px;
-}
-
-.swiper-slide {
-  margin: auto;
-}
-
