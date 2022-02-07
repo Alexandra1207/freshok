@@ -22,6 +22,12 @@ body {
   max-width: 1320px;
   margin: 0 auto;
   padding: 0 15px;
+  @include mq("tablet-2", max) {
+    padding: 0 30px;
+  }
+  @include mq("phone", max) {
+    padding: 0 6px 0 15px;
+  }
 }
 
 .title {
@@ -152,6 +158,9 @@ body {
   &__link:active {
     fill: $green-200;
   }
+  &__link--black svg {
+    fill: $dark-800;
+  }
 }
 
 .star {
@@ -197,4 +206,9 @@ body {
 
 .mixitup-control-active {
   border-bottom: 3px solid $green-200;
+}
+
+.test {
+  height: 100px;
+  background-color: red;
 }

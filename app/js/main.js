@@ -23,33 +23,24 @@ $(function () {
   var mixer1 = mixitup(containerEl1, config);
   var mixer2 = mixitup(containerEl2, config);
 
-  // Не получается сделать так, чтобы меню каталога закрывалось при клике вне него. Заменить toggleClass на addClass и removeClass не получилось, не работает. Закоментировала тот код, который по идее должен работать, а он не работает ((
 
   $('.header__catalog-btn, .catalog__link').on('click', function () {
     $('.catalog, .header__catalog-btn').toggleClass('catalog--active');
   });
 
-  //   $('.header__catalog-btn').on ('click', function() {
-  //   $('.catalog').addClass('catalog--active');
-  // });
+  let btnCatalog = $('.header__catalog-btn');
+  let catalog = $('.catalog');
 
-  // $('.header__catalog-btn').on('click', function () {
-  //   $('.catalog, .catalog__link').removeClass('catalog--active');
-  // });
-
-
-  // let btnCatalog = $('.header__catalog-btn');
-  // let catalog = $('.catalog');
-
-  // $(document).on(click, function (e) {
-  //   if (!btnCatalog.is(e.target) && btnCatalog.has(e.target).length === 0 &&
-  //       !catalog.is(e.target) && catalog.has(e.target).length === 0) {
-  //     catalog.removeClass('catalog--active'); 
-  //   }
-  // });
+  $(document).on('click', function (e) {
+    if (!btnCatalog.is(e.target) && btnCatalog.has(e.target).length === 0 &&
+        !catalog.is(e.target) && catalog.has(e.target).length === 0) {
+      catalog.removeClass('catalog--active'); 
+      btnCatalog.removeClass('catalog--active');       
+    }
+  });
 
 
-  $('.user-nav__link').on('click', function () {
+  $('.user-nav__item-cart').on('click', function () {
     $('.cart').addClass('cart--active');
   });
 
@@ -57,10 +48,17 @@ $(function () {
     $('.cart').removeClass('cart--active');
   });
 
+  let userNav = $('.user-nav__item-cart');
+  let cart = $('.cart');
 
-  // липкий хэдер .Не смогла придумать нормального решения для замещения места под липкий хэдер.Сделала через border - bottom у header__top.Тупое решение, но я не знаю, что еще придумать
+  $(document).on('click', function (e) {
+    if (!userNav.is(e.target) && userNav.has(e.target).length === 0 &&
+      !cart.is(e.target) && cart.has(e.target).length === 0) {
+      cart.removeClass('cart--active');
+    }
+  });
 
-
+ 
   let header = $('.header__content');
 
   $(window).scroll(function () {
@@ -73,6 +71,11 @@ $(function () {
 
 });
 
+$('.header__search-min').on('click', function () {
+  $('.header__search-adaptive').toggleClass('header__search-adaptive--active');
+});
+
+
 
 const swiper = new Swiper('.swiper', {
   loop: true,
@@ -81,6 +84,17 @@ const swiper = new Swiper('.swiper', {
   autoplay: true,
   autoplaySpeed: 3000,
   slidesPerGroup: 6
+});
+
+
+
+
+const overflowCart = document.querySelectorAll('.overflow-cart');
+
+overflowCart.forEach(element => {
+  if (element.textContent.length > 40) {
+    element.textContent = element.textContent.substring(0, 40) + '...';
+  }
 });
 
 

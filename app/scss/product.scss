@@ -43,6 +43,9 @@
   &__link {
     position: relative;
   }
+  &__img {
+    object-fit: contain;
+  }
 
   &__search {
     position: absolute;
