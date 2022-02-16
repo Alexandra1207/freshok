@@ -30,9 +30,119 @@
               </a>
             </li>
           </ul>
-          <button class="menu__btn">
-            <span></span>
-          </button>
+          <div class="menu__btn-wrapper">
+            <button class="menu__btn" type="button" aria-label="кнопка мобильное меню">
+              <span></span>
+            </button>
+          </div>
+
+          <div class="header__adaptive">
+            <div class="header__adaptive-top">
+              <div class="container">
+                <a class="logo__adaptive" href="#">
+                  <img class="logo__img-green" src="images/logo-green.svg" width="200" height="60" alt="логотип">
+                </a>
+              </div>
+            </div>
+            <div class="login">
+              <div class="container">
+                <div class="login__content">
+                  <a class="login__log" href="#" aria-label="вход в личный кабинет">
+                    <svg class="user-icon login__user-icon">
+                      <use xlink:href="images/sprite.svg#user"></use>
+                    </svg>
+                    Вход
+                  </a>
+                  <a class="login__registration" href="#" aria-label="регистрация">Регистрация</a>
+                </div>
+              </div>
+            </div>
+
+            <button class="header__adaptive-catalog-btn" type="button">
+              Каталог товаров
+            </button>
+            <div class="header__adaptive-contacts">
+              <div class="container">
+                <address class="header__address">
+                  <a class="header__hotline" href="tel:+7907288365">+7 907 288 365</a>
+                  <a class="header__address-link" href="#">
+                    Санкт-Петербург, Ул. Ленина, 1
+                  </a>
+                </address>
+                <ul class="social">
+                  <li class="social__item">
+                    <a class="social__link social__link--black" href="#">
+                      <svg class="social__facebook">
+                        <use xlink:href="images/sprite.svg#facebook" aria-label="ссылка на фэйсбук"></use>
+                      </svg>
+                    </a>
+                  </li>
+
+                  <li class="social__item">
+                    <a class="social__link social__link--black" href="#" aria-label="ссылка на ютьюб">
+                      <svg class="social__youtube">
+                        <use xlink:href="images/sprite.svg#youtube"></use>
+                      </svg>
+                    </a>
+                  </li>
+
+                  <li class="social__item">
+                    <a class="social__link social__link--black" href="#" aria-label="ссылка на телеграмм">
+                      <svg class="social__telegram">
+                        <use xlink:href="images/sprite.svg#telegram"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="social__item">
+                    <a class="social__link social__link--black" href="#" aria-label="ссылка на инстаграм">
+                      <svg class="social__instagram">
+                        <use xlink:href="images/sprite.svg#instagram"></use>
+                      </svg>
+                    </a>
+                  </li>
+
+                </ul>
+              </div>
+            </div>
+            <div class="header__adaptive-info">
+              <div class="container">
+                <ul class="header__adaptive-list">
+                  <li class="header__adaptive-item">
+                    <a class="header__adaptive-link" href="#">Доставка</a>
+                  </li>
+
+                  <li class="header__adaptive-item">
+                    <a class="header__adaptive-link" href="#">О нас</a>
+                  </li>
+
+                  <li class="header__adaptive-item">
+                    <a class="header__adaptive-link" href="#">Новости</a>
+                  </li>
+
+                  <li class="header__adaptive-item">
+                    <a class="header__adaptive-link" href="#">Контакты</a>
+                  </li>
+
+                  <li class="header__adaptive-item">
+                    <a class="header__adaptive-link" href="#">Акции</a>
+                  </li>
+
+                  <li class="header__adaptive-item">
+                    <a class="header__adaptive-link" href="#">Вакансии</a>
+                  </li>
+
+                  <li class="header__adaptive-item">
+                    <a class="header__adaptive-link" href="#">Отзывы</a>
+                  </li>
+                  <li class="header__adaptive-item">
+                    <a class="header__adaptive-link" href="#">Публичная оферта</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
           <ul class="menu__list">
             <li class="menu__item">
               <a class="link" href="#">ДОСТАВКА</a>
@@ -51,7 +161,7 @@
 
     <div class="header__content">
 
-      <!-- <div class="cart">
+      <div class="cart">
         <div class="cart__top">
           <div class="cart__top-content">
             <h4 class="cart__title">Корзина</h4>
@@ -419,7 +529,7 @@
           <p class="cart__rub">2038</p>
         </div>
         <button class="cart__send" type="submit">Оформить заказ</button>
-      </div> -->
+      </div>
 
       <div class="container">
         <div class="header__inner">
@@ -562,114 +672,6 @@
     </div>
 
 
-    <!-- <div class="header__adaptive">
-      <div class="header__adaptive-top">
-        <div class="container">
-          <a class="logo__adaptive" href="#">
-            <img class="logo__img-green" src="images/logo-green.svg" width="200" height="60" alt="логотип">
-          </a>
-        </div>
-      </div>
-      <div class="login">
-        <div class="container">
-          <div class="login__content">
-            <a class="login__log" href="#" aria-label="вход в личный кабинет">
-              <svg class="user-icon login__user-icon">
-                <use xlink:href="images/sprite.svg#user"></use>
-              </svg>
-              Вход
-            </a>
-            <a class="login__registration" href="#" aria-label="регистрация">Регистрация</a>
-          </div>
-        </div>
-      </div>
-
-      <button class="header__adaptive-catalog-btn" type="button">
-        Каталог товаров 
-      </button>
-      <div class="header__adaptive-contacts">
-        <div class="container">
-          <address class="header__address">
-            <a class="header__hotline" href="tel:+7907288365">+7 907 288 365</a>
-            <a class="header__address-link" href="#">
-              Санкт-Петербург, Ул. Ленина, 1
-            </a>
-          </address>
-          <ul class="social">
-            <li class="social__item">
-              <a class="social__link social__link--black" href="#">
-                <svg class="social__facebook">
-                  <use xlink:href="images/sprite.svg#facebook" aria-label="ссылка на фэйсбук"></use>
-                </svg>
-              </a>
-            </li>
-
-            <li class="social__item">
-              <a class="social__link social__link--black" href="#" aria-label="ссылка на ютьюб">
-                <svg class="social__youtube">
-                  <use xlink:href="images/sprite.svg#youtube"></use>
-                </svg>
-              </a>
-            </li>
-
-            <li class="social__item">
-              <a class="social__link social__link--black" href="#" aria-label="ссылка на телеграмм">
-                <svg class="social__telegram">
-                  <use xlink:href="images/sprite.svg#telegram"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="social__item">
-              <a class="social__link social__link--black" href="#" aria-label="ссылка на инстаграм">
-                <svg class="social__instagram">
-                  <use xlink:href="images/sprite.svg#instagram"></use>
-                </svg>
-              </a>
-            </li>
-
-          </ul>
-        </div>
-      </div>
-      <div class="header__adaptive-info">
-        <div class="container">
-          <ul class="header__adaptive-list">
-            <li class="header__adaptive-item">
-              <a class="header__adaptive-link" href="#">Доставка</a>
-            </li>
-
-            <li class="header__adaptive-item">
-              <a class="header__adaptive-link" href="#">О нас</a>
-            </li>
-
-            <li class="header__adaptive-item">
-              <a class="header__adaptive-link" href="#">Новости</a>
-            </li>
-
-            <li class="header__adaptive-item">
-              <a class="header__adaptive-link" href="#">Контакты</a>
-            </li>
-
-            <li class="header__adaptive-item">
-              <a class="header__adaptive-link" href="#">Акции</a>
-            </li>
-
-            <li class="header__adaptive-item">
-              <a class="header__adaptive-link" href="#">Вакансии</a>
-            </li>
-
-            <li class="header__adaptive-item">
-              <a class="header__adaptive-link" href="#">Отзывы</a>
-            </li>
-            <li class="header__adaptive-item">
-              <a class="header__adaptive-link" href="#">Публичная оферта</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-    </div> -->
-
-
   </header>
 
   <main class="main">
@@ -687,7 +689,7 @@
               <p class="top-slider__text">
                 Только с 7 по 13 июля скидка на сезонные фрукты и овощи до 50%. Торопитесь!
               </p>
-              <a class="btn" href="#">
+              <a class="btn top-slider__btn" href="#">
                 Купить сейчас
               </a>
             </div>
@@ -703,7 +705,7 @@
               <p class="top-slider__text">
                 Только с 12 по 15 июля скидка на домашние помидорчики
               </p>
-              <a class="btn" href="#">
+              <a class="btn top-slider__btn" href="#">
                 Купить сейчас
               </a>
             </div>
@@ -716,7 +718,7 @@
               <h2 class="top-slider__title">
                 Пусть остальные позеленеют от зависти <span>Распродажа зелени</span>
               </h2>
-              <a class="btn" href="#">
+              <a class="btn top-slider__btn" href="#">
                 Купить сейчас
               </a>
             </div>
@@ -765,6 +767,10 @@
       <div class="container">
         <h2 class="title">Топовые товары</h2>
         <div data-ref="container-1">
+
+          <!-- Тут начинаются проблемы с пп на адаптиве, так как косяк в макете -->
+
+
           <ul class="filter">
             <li class="filter__item">
               <button class="filter__btn" data-filter="all" type="button">Все товары</button>
@@ -1111,13 +1117,15 @@
         <ul class="banners__list">
           <li class="banners__item banners__item--white" style="background-image: url('images/banners/fruits.jpg')">
             <div class="banners__content">
-              <h4 class="banners__subtitle">
-                СВЕжаЙШИЕ ФРУКТЫ
-              </h4>
-              <h3 class="banners__title">
-                НАЧНИ ФРУктОВОЕ ЛЕТО
-                ВСЕГО От 99 ₽
-              </h3>
+              <div class="banners__wrapper">
+                <h4 class="banners__subtitle">
+                  СВЕжаЙШИЕ ФРУКТЫ
+                </h4>
+                <h3 class="banners__title">
+                  НАЧНИ ФРУктОВОЕ ЛЕТО
+                  ВСЕГО От 99&nbsp;₽
+                </h3>
+              </div>
               <a class="banners__btn" href="#">
                 ПЕРЕЙТИ к ПОКУПКАМ
               </a>
@@ -1126,12 +1134,14 @@
 
           <li class="banners__item" style="background-image: url('images/banners/vegetables.jpg')">
             <div class="banners__content">
-              <h4 class="banners__subtitle">
-                СЕЗОННАЯ РАСПРОДАЖА
-              </h4>
-              <h3 class="banners__title">
-                ОВОЩЕПАД ДО -50%
-              </h3>
+              <div class="banners__wrapper">
+                <h4 class="banners__subtitle">
+                  СЕЗОННАЯ РАСПРОДАЖА
+                </h4>
+                <h3 class="banners__title">
+                  ОВОЩЕПАД ДО -50%
+                </h3>
+              </div>
               <a class="banners__btn" href="#">
                 ПЕРЕЙТИ к ПОКУПКАМ
               </a>
@@ -1140,12 +1150,14 @@
 
           <li class="banners__item" style="background-image: url('images/banners/bread.jpg')">
             <div class="banners__content">
-              <h4 class="banners__subtitle">
-                НЯМ-НЯМ
-              </h4>
-              <h3 class="banners__title">
-                СВЕЖИЙ ХЛЕБЧИК
-              </h3>
+              <div class="banners__wrapper">
+                <h4 class="banners__subtitle">
+                  НЯМ-НЯМ
+                </h4>
+                <h3 class="banners__title">
+                  СВЕЖИЙ ХЛЕБЧИК
+                </h3>
+              </div>
               <a class="banners__btn" href="#">
                 ПЕРЕЙТИ к ПОКУПКАМ
               </a>
@@ -1573,7 +1585,7 @@
         </ul>
       </div>
     </section>
-  </main> -->
+  </main>
 
   <footer class="footer">
     <div class="footer__top">
@@ -1582,12 +1594,17 @@
           <img class="logo__img" src="images/logo.svg" width="200" height="60" alt="логотип">
         </a>
         <div class="footer__inner">
-          <form class="footer__form">
-            <label class="footer__label" for="input-email">Следите за нашими акциями</label>
-            <input class="footer__input" type="email" name="email" placeholder="email@email.com" id="input-email"
-              required>
-            <button class="footer__btn" type="submit">ПОДПИСАТЬСЯ</button>
-          </form>
+
+          <!-- Не смогла выровнять форму по центру пришлось создать дполнительную обертку. Но, мне кажется, решение какое-то кривое -->
+
+          <div class="footer__wrapper-form">
+            <form class="footer__form">
+              <label class="footer__label" for="input-email">Следите за нашими акциями</label>
+              <input class="footer__input" type="email" name="email" placeholder="email@email.com" id="input-email"
+                required>
+              <button class="footer__btn" type="submit">ПОДПИСАТЬСЯ</button>
+            </form>
+          </div>
 
           <ul class="footer__list">
             <li class="footer__item">

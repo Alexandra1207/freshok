@@ -1,11 +1,41 @@
 .promo {
   padding: 72px 0;
   background-color: #f5f5f5;
+  @include mq("desktop", max) {
+    padding: 55px 0;
+  }
+  @include mq("tablet", max) {
+    padding: 48px 0;
+  }
   &__title {
     margin-bottom: 30px;
+    @include mq("tablet", max) {
+      margin-bottom: 22px;
+    }
   }
   &__item:not(:last-child) {
     margin-right: 25px;
-  } 
+    @include mq("phone", max) {
+      margin-right: 22px;
+    }
+  }
+  &__product-mini:not(:last-child) {
+    @include mq("phone", max) {
+      margin-bottom: 15px;
+    }
+  }
+  .filter__content {
+    @include mq("desktop-2", max) {
+      grid-gap: 20px;
+    }
+    @include mq("desktop", max) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include mq("tablet", max) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include mq("phone", max) {
+      display: block;
+    }
+  }
 }
-

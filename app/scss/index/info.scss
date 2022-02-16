@@ -1,21 +1,56 @@
 .info {
+  margin-top: 100px;
   padding: 48px 0 10px;
   background-color: $silver-100;
+  @include mq("desktop-2", max) {
+    margin-top: 76px;
+  }
+  @include mq("tablet-2", max) {
+    margin-top: 50px;
+    padding-top: 35px;
+  }
+  @include mq("phone", max) {
+    margin-top: 19px;
+    padding: 28px 0 0;
+  }
+
   &__list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 0 auto;
-    padding: 0 60px 0 0;
+    padding: 0 65px 0 0;
+    @include mq("tablet", max) {
+      flex-direction: column;
+      align-items: center;
+    }
+    @include mq("phone", max) {
+      align-items: flex-start;
+    }
   }
   &__item {
     position: relative;
     margin-bottom: 20px;
     padding-left: 90px;
     letter-spacing: 0;
+    @include mq("phone", max) {
+      padding-left: 73px;
+      margin-bottom: 32px;
+    }
+  }
+  &__item--support {
+    @include mq("tablet", max) {
+      margin-left: -60px;
+      @include mq("phone", max) {
+        margin-left: 0;
+      }
+    }
   }
   &__item:not(:last-child) {
     margin-right: 50px;
+    @include mq("tablet-2", max) {
+      margin-right: 0;
+    }
   }
   &__item::before {
     content: "";
@@ -27,6 +62,9 @@
     background-size: cover;
     background-repeat: no-repeat;
     filter: invert(58%) sepia(43%) saturate(4587%) hue-rotate(52deg) brightness(97%) contrast(89%);
+    @include mq("phone", max) {
+      left: -20px;
+    }
   }
   &__item--delivery::before {
     background-image: url(../images/sprite.svg#scooter);
@@ -45,6 +83,8 @@
   }
   &__text {
     max-width: 190px;
+    @include mq("phone", max) {
+      max-width: 210px;
+    }
   }
-}  
-
+}

@@ -2,6 +2,7 @@
   &__item {
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
   }
   &__container {
     display: flex;
@@ -9,6 +10,13 @@
     width: 100%;
     min-height: 600px;
     padding: 50px 0;
+    @include mq("tablet-2", max) {
+      min-height: 500px;
+    }
+    @include mq("phone", max) {
+      min-height: 320px;
+      padding: 60px 0 50px 0;
+    }
   }
   &__inner {
     max-width: 1290px;
@@ -17,6 +25,16 @@
     padding: 24px 24px 23px 24px;
     background-color: rgba($white, 0.8);
     border-radius: 4px;
+    @include mq("desktop-2", max) {
+      max-width: 1050px;
+    }
+    @include mq("tablet-2", max) {
+      border-radius: 0;
+    }
+    @include mq("phone", max) {
+      max-width: 100%;
+      padding: 15px;
+    }
   }
   &__title {
     max-width: 770px;
@@ -25,6 +43,24 @@
     font-size: 60px;
     line-height: 1.3;
     text-transform: uppercase;
+    @include mq("desktop-2", max) {
+      max-width: 700px;
+      font-size: 50px;
+    }
+    @include mq("tablet-2", max) {
+      font-size: 45px;
+    }
+    @include mq("desktop-2", max) {
+      max-width: 620px;
+      font-size: 40px;
+    }
+    @include mq("phone", max) {
+      max-width: 280px;
+      margin-bottom: 15px;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
   }
   &__title span {
     color: $red-900;
@@ -33,17 +69,32 @@
     margin-bottom: 35px;
     font-size: 16px;
     letter-spacing: 0;
+    @include mq("phone", max) {
+      margin-bottom: 24px;
+    }
+  }
+  &__btn {
+    @include mq("phone", max) {
+      font-size: 14px;
+      letter-spacing: 0.03em;
+    }
   }
   .slick-prev,
   .slick-next {
     position: absolute;
-    top: 50%;
+    top: 60%;
     padding: 13px;
     background-color: rgba($white, 0.8);
     border-radius: 6px;
     transform: translateY(-50%);
     z-index: 2;
     transition: background-color 0.3s;
+
+    // Стрелки смогла убрать только через !important. Видимо, из-за slick-slider. Если знаешь другой способ, подскажи, плиз
+
+    @include mq("desktop-2", max) {
+      display: none !important;
+    }
   }
 
   .slick-prev {
@@ -101,5 +152,44 @@
   .slick-disabled:active .arrow-left,
   .slick-disabled:active .arrow-right {
     fill: $silver-600;
+  }
+  .slick-dots {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: -100px;
+    @include mq("tablet-2", max) {
+      margin-top: -75px;
+    }
+    @include mq("phone", max) {
+      margin-top: -40px;
+    }
+
+    button {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: $white;
+      border: 1px solid $silver-600;
+      font-size: 0;
+      padding: 0;
+      @include mq("desktop-2", min) {
+        display: none;
+      }
+      @include mq("phone", max) {
+        width: 10px;
+        height: 10px;
+      }
+    }
+    li:not(:last-child) {
+      margin-right: 45px;
+      @include mq("phone", max) {
+        margin-right: 12px;
+      }
+    }
+    .slick-active button {
+      background-color: $green-900;
+      border: 1px solid $green-900;
+    }
   }
 }

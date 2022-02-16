@@ -2,28 +2,65 @@
   letter-spacing: 0;
   color: $white;
   background-color: $dark-800;
-
   &__top {
     padding: 32px 0;
     border-bottom: 1px solid rgba($white, 0.1);
+    // @include mq("tablet-2", max) {
+    // }
+
+    @include mq("tablet-2", max) {
+      text-align: center;
+      .container {
+        padding: 0;
+      }
+      .logo {
+        width: 200px;
+        height: 60px;
+        &__img {
+          display: block;
+        }
+      }
+    }
+    @include mq("phone", max) {
+      padding: 25px 0;
+    }
   }
 
   &__inner {
     display: flex;
     justify-content: space-between;
     padding-top: 20px;
+    @include mq("phone", max) {
+      padding-top: 17px;
+    }
+    @include mq("tablet-2", max) {
+      flex-direction: column;
+    }
   }
-
+  &__wrapper-form {
+    @include mq("tablet-2", max) {
+      margin: 0 auto;
+      order: 3;
+    }
+  }
   &__form {
+    position: relative;
     max-width: 306px;
     width: 100%;
-    position: relative;
+    @include mq("tablet-2", max) {
+      text-align: left;
+      padding: 16px 0 0 63px;
+      transform: translateX(-31%);
+    }
   }
 
   &__label {
     display: block;
     margin-bottom: 12px;
     padding-top: 3px;
+    @include mq("tablet-2", max) {
+      margin-bottom: 17px;
+    }
   }
 
   &__input {
@@ -66,6 +103,32 @@
     column-gap: 75px;
     column-width: 130px;
     padding-left: 65px;
+    @include mq("desktop", min) {
+      padding-left: 175px;
+    } 
+    @include mq("desktop", max) {
+      column-count: 2;
+      padding-left: 110px;
+    }
+    @include mq("tablet-2", max) {
+      text-align: left;
+      column-gap: 45px;
+      column-width: 115px;
+      padding: 24px 0 10px 65px;
+      border-bottom: 1px solid rgba($white, 0.1);
+      column-count: 3;
+    }
+    @include mq("tablet", max) {
+      column-count: 2;
+    }
+  }
+
+  &__contacts {
+    @include mq("tablet-2", max) {
+      padding-bottom: 24px;
+      border-bottom: 1px solid rgba($white, 0.1);
+      order: -1;
+    }
   }
 
   &__item {
@@ -89,9 +152,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include mq("tablet-2", max) {
+      flex-direction: column;
+    }
   }
   &__card {
     display: flex;
+    @include mq("tablet-2", max) {
+      margin-bottom: 25px;
+    }
   }
   &__visa {
     width: 90px;
@@ -106,5 +175,10 @@
   &__mcard {
     fill: $white;
     transition: opacity 0.3s;
+  }
+  &__copy {
+    @include mq("tablet-2", max) {
+      order: 3;
+    }
   }
 }

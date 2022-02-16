@@ -8,6 +8,10 @@
   border: 1px solid rgba(17, 17, 17, 0.2);
   border-radius: 6px;
   transition: border 0.3s;
+  @include mq("tablet-2", max) {
+    height: 304px;
+    padding: 52px 0 12px;
+  }
   &:hover {
     border: 1px solid $green-900;
   }
@@ -18,6 +22,9 @@
     top: 10px;
     left: 10px;
     z-index: 2;
+    @include mq("phone", max) {
+      top: 12px;
+    }
   }
 
   &__badge {
@@ -42,9 +49,22 @@
   }
   &__link {
     position: relative;
+    margin: 0 auto;
+    // @include mq("desktop", max) {
+    //   display: block;
+    //   margin-bottom: 13px;
+    // }
   }
   &__img {
     object-fit: contain;
+    @include mq("tablet-2", max) {
+      width: 168px;
+      height: 126px;
+    }
+    // @include mq("tablet-2", max) {
+    //   width: 100px;
+    //   height: 100px;
+    // }
   }
 
   &__search {
@@ -88,9 +108,19 @@
     justify-content: space-between;
     height: 100px;
     padding: 0 18px 0;
+    @include mq("desktop", max) {
+      padding: 0 11px 0;
+      height: 100px;
+    }
   }
   &__name {
     transition: opacity 0.3s;
+    // @include mq("phone", min) {
+    //   text-align: center;
+    // }
+    @include mq("tablet-2", min) {
+      text-align: start;
+    }
   }
   &__name:hover,
   &__name:focus {
@@ -102,6 +132,12 @@
     line-height: 1.4;
     letter-spacing: 0.03em;
     color: $dark-900;
+    @include mq("desktop", max) {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
   }
   &__bottom {
     display: flex;
@@ -208,6 +244,9 @@
 
   .jq-number {
     position: relative;
+    @include mq("desktop", max) {
+      display: none;
+    }
   }
 
   .jq-number__field input {
@@ -286,6 +325,9 @@
   padding: 8px 7px 2px 7px;
   border-radius: 3px;
   transition: box-shadow 0.3s;
+  @include mq("phone", max) {
+    top: 7px;
+  }
 }
 
 .heart-block:focus {
@@ -298,6 +340,10 @@
   height: 32px;
   fill: $silver-600;
   transition: fill 0.3s;
+  @include mq("phone", max) {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 .heart:hover {
@@ -322,7 +368,19 @@
   background-color: $white;
   border: 1px solid $silver-600;
   border-radius: 6px;
+  // justify-content: space-between;
   transition: border 0.3s;
+   @include mq("desktop-2", max) {
+     height: 140px;
+   }
+   @include mq("phone", max) {
+    max-width: 300px;
+    width: 100%;
+    height: 124px;
+    margin: 0 auto;   
+    padding-top: 13px; 
+   }
+
   &:hover {
     border: 1px solid $green-900;
   }
@@ -331,6 +389,13 @@
   }
   &__link {
     margin-right: 12px;
+    .product__img {
+      width: 100px;
+      height: 100px;
+    }
+    // @include mq("tablet-2", min) {
+    //   margin-right: 0;
+    // }
   }
   &__content {
     display: flex;
@@ -367,10 +432,18 @@
   align-items: center;
   height: 84px;
   padding: 8px 10px 12px 12px;
+   @include mq("phone", max) {
+    //  width: 100%;
+     height: 126px;
+   }
   .product-mini__link {
     margin-right: 22px;
+    @include mq("phone", max) {
+      margin-right: 9px;
+    }
+
   }
-  .product__link::after{
+  .product__link::after {
     transition: opacity 0.3s;
   }
   .product__link:hover::after {
@@ -407,6 +480,9 @@
     height: 24px;
     border-radius: 3px;
     transition: background-color 0.3s;
+    @include mq("phone", max) {
+      right: 5px;
+    }
   }
   &__btn-close:hover {
     background-color: $green-100;
@@ -415,7 +491,7 @@
     outline: 3px solid $green-200;
   }
   &__btn-close:active {
-  background-color: rgba($silver-600, 0.3);
+    background-color: rgba($silver-600, 0.3);
   }
   &__right-bottom {
     position: absolute;
@@ -423,6 +499,11 @@
     bottom: 13px;
     right: 17px;
     align-items: center;
+    @include mq("phone", max) {
+      width: 84%;
+      justify-content: space-between;
+      bottom: 11px;
+    }
   }
   &__close {
     width: 15px;
@@ -499,6 +580,9 @@
   }
   .product__num {
     margin-right: 18px;
+    @include mq("phone", max) {
+      margin-right: 0;
+    }
   }
   .cart__rub {
     font-size: 20px;

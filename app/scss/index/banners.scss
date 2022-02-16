@@ -1,20 +1,53 @@
 .banners {
   padding-bottom: 70px;
+  @include mq("tablet", max) {
+    padding-bottom: 50px;
+  }
   &__list {
     display: grid;
-    min-height: 300px;
+    // min-height: 300px;
     grid-template-columns: 630px 1fr 1fr;
     grid-gap: 30px;
+    @include mq("desktop-2", max) {
+      grid-template-columns: 2fr 1fr 1fr;
+    }
+    @include mq("desktop", max) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+    @include mq("tablet", max) {
+      display: block;
+    }
   }
   &__item {
     display: flex;
+    height: 300px;
     align-items: center;
-    padding: 50px 30px 55px 35px;
+    padding: 50px 20px 55px 35px;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: left center;
     text-transform: uppercase;
     border-radius: 6px;
+    @include mq("tablet", max) {
+      padding-top: 35px;
+    }
+    @include mq("phone", max) {
+      padding: 76px 15px 30px;
+    }
+  }
+  &__item:first-child {
+    @include mq("desktop", max) {
+      grid-column: span 2;
+    }
+  }
+  &__item:not(:last-child) {
+    @include mq("tablet", max) {
+      margin-bottom: 20px;
+    }
+    @include mq("phone", max) {
+      margin-bottom: 15px;
+    }
   }
   &__content {
     display: flex;
@@ -25,15 +58,35 @@
     max-width: 77%;
     @extend %opensans-700;
     letter-spacing: 0;
+    @include mq("phone", max) {
+      width: 260px;
+      max-height: 193px;
+    }
+    @include mq("desktop-2", max) {
+      max-height: 200px;
+    }
   }
   &__subtitle {
+    margin-bottom: 18px;
     font-size: 12px;
     line-height: 1;
     letter-spacing: 0.1em;
+    @include mq("desktop", max) {
+      margin-bottom: 30px;
+    }
+    @include mq("phone", max) {
+      margin-bottom: 17px;
+    }
   }
   &__title {
     @extend %ruda-600;
     font-size: 30px;
+    @include mq("phone", max) {
+      font-size: 24px;
+    }
+    @include mq("phone", max) {
+      max-width: 160px;
+    }
   }
   &__btn {
     width: fit-content;
@@ -45,6 +98,9 @@
   &__item--white {
     color: $white;
     box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.25);
+    .banners__title {
+      max-width: 100%;
+    }
   }
   &__item--white &__btn {
     border-color: $white;

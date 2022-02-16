@@ -1,6 +1,9 @@
 .top {
   padding: 72px 0;
-  background-color: $white;
+  // background-color: $white;
+   @include mq("desktop", max) {
+     padding: 48px 0;
+   }
 }
 
 
