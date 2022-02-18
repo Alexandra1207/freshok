@@ -44,7 +44,6 @@ body {
   @include mq("desktop", max) {
     font-size: 24px;
     margin-bottom: 22px;
-    //  margin-left: -12px;
   }
 }
 
@@ -134,9 +133,6 @@ body {
   @include mq("tablet-2", max) {
     justify-content: center;
   }
-  @include mq("phone", max) {
-    justify-content: flex-start;
-  }
 
   &__item:not(:last-child) {
     margin-right: 12px;
@@ -207,16 +203,8 @@ body {
     @include mq("desktop", max) {
       margin-right: 24px;
     }
-    // @include mq("desktop", max) {
-    //   margin-bottom: 12px;
-    // }
   }
-  // &__item:not(:last-child) {
-  //   margin-right: 19px;
-  //   @include mq("desktop", max) {
-  //     margin-right: 24px;
-  //   }
-  // }
+
   &__btn {
     @extend %opensans-700;
     font-size: 15px;
@@ -245,10 +233,7 @@ body {
     @include mq("tablet-2", max) {
       grid-template-columns: repeat(3, 1fr);
     }
-    // @include mq("tablet", max) {
-    //   // grid-template-columns: repeat(3, 1fr);
 
-    // }
     @include mq("phone", max) {
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 5px;

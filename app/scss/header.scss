@@ -7,6 +7,9 @@
     color: $white;
     background-color: #31352b;
     border-bottom: 110px solid $green-900;
+    @media (max-height: 1200px) and (orientation: landscape) {
+      border-bottom: 64px solid $green-900;
+    }
     @include mq("tablet", max) {
       border-bottom: 90px solid $green-900;
     }
@@ -23,6 +26,9 @@
     padding: 23px 0;
     background-color: $green-900;
     transition: all 0.3s;
+    @media (max-height: 1200px) and (orientation: landscape) {
+      padding: 0;
+    }
     @include mq("tablet", max) {
       padding: 15px 0;
     }
@@ -272,8 +278,8 @@
   &__adaptive {
     position: absolute;
     top: 0;
-    left: -15px;
-    width: 80vw;
+    left: -30px;
+    width: 450px;
     @extend %opensans-400;
     font-size: 18px;
     text-transform: none;
@@ -282,6 +288,10 @@
     z-index: 201;
     transform: translateX(-300%);
     transition: all 0.3s;
+    @include mq("phone", max) {
+      left: -15px;
+      width: 300px;
+    }
     &.menu__btn--active {
       transform: translateX(0);
     }
@@ -329,6 +339,9 @@
     font-size: 18px;
     color: $dark-800;
     border-bottom: 1px solid rgba($silver-600, 0.3);
+    .social {
+      justify-content: flex-start;
+    }
     @include mq("phone", min) {
       padding: 30px 0;
     }
@@ -464,12 +477,6 @@
   justify-content: space-between;
   padding: 16px 0;
   text-transform: uppercase;
-  // .login__content {
-  //   text-transform: none;
-  // }
-  // .login__log {
-  //   font-size: 18px;
-  // }
   @include mq("tablet", max) {
     justify-content: flex-end;
   }
@@ -483,7 +490,10 @@
       width: 24px;
       height: 18px;
       top: 31px;
-      left: 232px;
+      left: 360px;
+      @include mq("phone", max) {
+        left: 232px;
+      }
     }
     .menu__btn--active.menu__btn::after,
     .menu__btn--active.menu__btn::before {
@@ -527,10 +537,6 @@
       opacity: 0;
     }
   }
-
-  // &__btn--active.menu__btn .menu__adaptive {
-  //   transform: translateX(0);
-  // }
 
   &__btn--active.menu__btn::before {
     transform: rotate(45deg);
@@ -616,9 +622,6 @@
 .user-nav {
   display: flex;
   align-items: center;
-  // @include mq("phone", max) {
-  //   padding-right: 9px;
-  // }
   &__item:not(:last-child) {
     margin-right: 10px;
     @include mq("phone", max) {
@@ -798,12 +801,6 @@
       height: 286px;
       padding: 10px;
     }
-    // @include mq("desktop", max) {
-    //   height: 7vh;
-    // }
-    // @include mq("desktop", max) {
-    //   height: 10vh;
-    // }
   }
   &__item {
     margin-bottom: 12px;

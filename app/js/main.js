@@ -7,9 +7,9 @@ $(function () {
     dots: true,
     prevArrow: '<button type="button" class="slick-prev"><svg class="arrow-left"><use xlink:href="images/sprite.svg#arrow-left"></use></svg></button>',
     nextArrow: '<button type="button" class="slick-next"><svg class="arrow-right"><use xlink:href="images/sprite.svg#arrow-right"></use></svg></button>',
-    // autoplay: true,
-    // autoplaySpeed: 2000,
-    // infinite: false
+    autoplay: true,
+    autoplaySpeed: 2000,
+    infinite: false
   });
 
   var containerEl1 = document.querySelector('[data-ref="container-1"]');
@@ -25,8 +25,7 @@ $(function () {
   var mixer2 = mixitup(containerEl2, config);
 
 
-
-  $('.menu__btn, header__adaptive-link').on('click', function () {
+  $('.menu__btn, .header__adaptive-link, .header__adaptive-catalog-btn, .header__address').on('click', function () {
     $('.menu__btn, .header__adaptive').toggleClass('menu__btn--active');
   });
 
@@ -57,10 +56,6 @@ $(function () {
     }
   });
 
-
-  // $('.user-nav__item-cart').on('click', function () {
-  //   $('.cart').addClass('cart--active');
-  // });
 
   $('.user-nav__item-cart').on('click', function () {
     $('.cart').toggleClass('cart--active');
@@ -96,20 +91,17 @@ $(function () {
     $('.header__search-adaptive').toggleClass('header__search-adaptive--active');
   });
 
-  // let adaptiveSearch = $('.header__search-adaptive');
+  let minSearch = $('.header__search-min');
+  let adaptiveSearch = $('.header__search-adaptive');
 
-  // $(document).on('click', function (e) {
-  //   if (!adaptiveSearch.is(e.target) && adaptiveSearch.has(e.target).length === 0) {
-  //     adaptiveSearch.removeClass('header__search-adaptive--active');
-  //   }
-  // });
-  
-
-  
+  $(document).on('click', function (e) {
+    if (!adaptiveSearch.is(e.target) && adaptiveSearch.has(e.target).length === 0 &&
+      !minSearch.is(e.target) && minSearch.has(e.target).length === 0) {
+      adaptiveSearch.removeClass('header__search-adaptive--active');
+    }
+  });
 
 });
-
-
 
 
 
@@ -117,8 +109,8 @@ const swiper = new Swiper('.swiper', {
   loop: true,
   slidesPerView: 6,
   spaceBetween: 140,
-  // autoplay: true,
-  // autoplaySpeed: 3000,
+  autoplay: true,
+  autoplaySpeed: 3000,
   slidesPerGroup: 6
 });
 
@@ -128,8 +120,8 @@ $(function () {
       loop: true,
       slidesPerView: 4,
       spaceBetween: 93,
-      // autoplay: true,
-      // autoplaySpeed: 3000,
+      autoplay: true,
+      autoplaySpeed: 3000,
       slidesPerGroup: 4
     });
     if ($(window).width() < 992) {
@@ -137,8 +129,8 @@ $(function () {
         loop: true,
         slidesPerView: 3,
         spaceBetween: 93,
-        // autoplay: true,
-        // autoplaySpeed: 3000,
+        autoplay: true,
+        autoplaySpeed: 3000,
         slidesPerGroup: 3
       });
     }
@@ -147,24 +139,14 @@ $(function () {
         loop: true,
         slidesPerView: 2,
         spaceBetween: 93,
-        // autoplay: true,
-        // autoplaySpeed: 3000,
+        autoplay: true,
+        autoplaySpeed: 3000,
         slidesPerGroup: 2
       });
     }
   }
-  // if ($(window).width() >= 1200) {
-  //   const swiper = new Swiper('.swiper', {
-  //     loop: true,
-  //     slidesPerView: 6,
-  //     spaceBetween: 93,
-  //     // autoplay: true,
-  //     // autoplaySpeed: 3000,
-  //     slidesPerGroup: 6
-  //   });
-  // }
-});
 
+});
 
 
 
@@ -197,21 +179,20 @@ overflowCardMini.forEach(element => {
 
 const overflow = document.querySelectorAll('.overflow');
 
-overflow.forEach(element => {
-  if (element.textContent.length > 145) {
-    element.textContent = element.textContent.substring(0, 145) + '...';
+
+$(function () {
+  if (($(window).width() < 1600) && ($(window).width() > 768)) {
+    overflow.forEach(element => {
+      if (element.textContent.length > 50) {
+        element.textContent = element.textContent.substring(0, 50) + '...';
+      }
+    });
+  } else {
+    overflow.forEach(element => {
+      if (element.textContent.length > 145) {
+        element.textContent = element.textContent.substring(0, 145) + '...';
+      }
+    });
   }
+
 });
-
-
-
-
-// document.addEventListener('DOMContentLoaded', () => {
-//   const burger = document.querySelector('.menu__btn');
-//   burger.addEventListener('click', () => {
-//     //Добавляем событие "клик" на бургер
-
-//     burger.classList.toggle('menu__btn--active'); //при клике на бургер у нас будет либо добавлятся класс, либо удаляется.
-//     //ВАЖНО! Мы уже работаем с данным классом, поэтому тут "." не ставим, иначе в атрибут class значение добавится с "." и работать не будет.
-//   });
-// }
