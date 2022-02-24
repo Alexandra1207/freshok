@@ -1,6 +1,19 @@
 
 $(function () {
 
+  $(".filter-price__input").ionRangeSlider({
+    type: "double",
+    onStart: function (data) {
+      $('.filter-price__from').text(data.from);
+      $('.filter-price__to').text(data.to);
+    },
+    onChange: function (data) {
+      $('.filter-price__from').text(data.from);
+      $('.filter-price__to').text(data.to);
+    },
+
+  });
+
   $('.product__num').styler();
 
   $('.top-slider__list').slick({
@@ -9,7 +22,16 @@ $(function () {
     nextArrow: '<button type="button" class="slick-next"><svg class="arrow-right"><use xlink:href="images/sprite.svg#arrow-right"></use></svg></button>',
     autoplay: true,
     autoplaySpeed: 2000,
-    infinite: false
+    infinite: false,
+    responsive: [
+      {
+        breakpoint: 1600,
+        settings: {
+        dots: true,
+        arrows: false,
+        }
+      }
+    ]
   });
 
   var containerEl1 = document.querySelector('[data-ref="container-1"]');
@@ -59,10 +81,13 @@ $(function () {
 
   $('.user-nav__item-cart').on('click', function () {
     $('.cart').toggleClass('cart--active');
+    $('body').addClass('lock');
+
   });
 
   $('.cart__btn-close').on('click', function () {
     $('.cart').removeClass('cart--active');
+    $('body').removeClass('lock');
   });
 
   let userNav = $('.user-nav__item-cart');
@@ -72,9 +97,9 @@ $(function () {
     if (!userNav.is(e.target) && userNav.has(e.target).length === 0 &&
       !cart.is(e.target) && cart.has(e.target).length === 0) {
       cart.removeClass('cart--active');
+      $('body').removeClass('lock');
     }
   });
-
 
   let header = $('.header__content');
 
@@ -101,52 +126,71 @@ $(function () {
     }
   });
 
+
 });
 
 
 
 const swiper = new Swiper('.swiper', {
   loop: true,
-  slidesPerView: 6,
-  spaceBetween: 140,
   autoplay: true,
+  spaceBetween: 93,
   autoplaySpeed: 3000,
-  slidesPerGroup: 6
-});
-
-$(function () {
-  if ($(window).width() < 1200) {
-    const swiper = new Swiper('.swiper', {
-      loop: true,
+  slidesPerGroup: 6,
+  breakpoints: {
+    310: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+    },
+    560: {
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+    },
+    992: {
       slidesPerView: 4,
-      spaceBetween: 93,
-      autoplay: true,
-      autoplaySpeed: 3000,
-      slidesPerGroup: 4
-    });
-    if ($(window).width() < 992) {
-      const swiper = new Swiper('.swiper', {
-        loop: true,
-        slidesPerView: 3,
-        spaceBetween: 93,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        slidesPerGroup: 3
-      });
-    }
-    if ($(window).width() < 560) {
-      const swiper = new Swiper('.swiper', {
-        loop: true,
-        slidesPerView: 2,
-        spaceBetween: 93,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        slidesPerGroup: 2
-      });
+      slidesPerGroup: 4,
+    },
+    1200: {
+      slidesPerView: 6,
+      spaceBetween: 140,
     }
   }
 
 });
+
+// $(function () {
+//   if ($(window).width() < 1200) {
+//     const swiper = new Swiper('.swiper', {
+//       loop: true,
+//       slidesPerView: 4,
+//       spaceBetween: 93,
+//       autoplay: true,
+//       autoplaySpeed: 3000,
+//       slidesPerGroup: 4
+//     });
+//     if ($(window).width() < 992) {
+//       const swiper = new Swiper('.swiper', {
+//         loop: true,
+//         slidesPerView: 3,
+//         spaceBetween: 93,
+//         autoplay: true,
+//         autoplaySpeed: 3000,
+//         slidesPerGroup: 3
+//       });
+//     }
+//     if ($(window).width() < 560) {
+//       const swiper = new Swiper('.swiper', {
+//         loop: true,
+//         slidesPerView: 2,
+//         spaceBetween: 93,
+//         autoplay: true,
+//         autoplaySpeed: 3000,
+//         slidesPerGroup: 2
+//       });
+//     }
+//   }
+
+// });
 
 
 

@@ -674,11 +674,137 @@
   </header>
 
   <main class="main">
-    <h1 class="sr-only">Фрешок онлайн маркет. Каталог</h1>
+    <section class="breadcrumbs">
+      <div class="container">
+        <ul class="breadcrumbs__list">
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="#">
+              Главная
+            </a>
+          </li>
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="#">
+              Каталог товаров
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="catalog-page">
+      <div class="container">
+        <h1 class="catalog-page__title">Каталог товаров</h1>
+        <div class="catalog-page__inner">
+          <ul class="filters">
+            <li class="filters__item filters-categories">
+              <h4 class="filters__title">
+                Категории
+              </h4>
+              <form class="filters__inner">
+                <label class="filters-categories__label">
+
+                </label>
+              </form>
+            </li>
+
+
+            <li class="filters__item">
+              <h4 class="filters__title">
+                Предложения
+              </h4>
+              <form class="filters__inner filters-choice">
+                <label class="filters-choice__label">
+                  <input class="filters-choice__input" type="checkbox">
+                  <span class="filters-choice__checkbox"></span>
+                  <span class="filters-choice__text">Со скидкой</span>
+                </label>
+                <label class="filters-choice__label">
+                  <input class="filters-choice__input" type="checkbox" checked>
+                  <span class="filters-choice__checkbox"></span>
+                  <span class="filters-choice__text">Новинка</span>
+                </label>
+                <label class="filters-choice__label">
+                  <input class="filters-choice__input" type="checkbox">
+                  <span class="filters-choice__checkbox"></span>
+                  <span class="filters-choice__text">Хит</span>
+                </label>
+              </form>
+
+            </li>
 
 
 
-    
+            <li class="filters__item">
+              <h4 class="filters__title">
+                Бренд
+              </h4>
+              <form class="filters__inner filters-choice">
+                <label class="filters-choice__label">
+                  <input class="filters-choice__input" type="checkbox">
+                  <span class="filters-choice__checkbox"></span>
+                  <span class="filters-choice__text">CocaCola</span>
+                </label>
+                <label class="filters-choice__label">
+                  <input class="filters-choice__input" type="checkbox">
+                  <span class="filters-choice__checkbox"></span>
+                  <span class="filters-choice__text">Pepsi</span>
+                </label>
+                <label class="filters-choice__label">
+                  <input class="filters-choice__input" type="checkbox">
+                  <span class="filters-choice__checkbox"></span>
+                  <span class="filters-choice__text">Sprite</span>
+                </label>
+                <label class="filters-choice__label">
+                  <input class="filters-choice__input" type="checkbox">
+                  <span class="filters-choice__checkbox"></span>
+                  <span class="filters-choice__text">Fanta</span>
+                </label>
+                <label class="filters-choice__label">
+                  <input class="filters-choice__input" type="checkbox">
+                  <span class="filters-choice__checkbox"></span>
+                  <span class="filters-choice__text">RedBull</span>
+                </label>
+                <label class="filters-choice__label">
+                  <input class="filters-choice__input" type="checkbox">
+                  <span class="filters-choice__checkbox"></span>
+                  <span class="filters-choice__text">Dr Pepper</span>
+                </label>
+              </form>
+            </li>
+
+            <li class="filters__item filter-price">
+              <h4 class="filters__title">
+                Цена
+              </h4>
+              <form class="filters__inner filter-price__form" action="#">
+                <label class="filter-price__label">
+                  <div class="filter-price__block">
+                    <span class="filter-price__text">от</span>
+                    <div class="filter-price__from"></div>
+                    <span class="filter-price__rub">₽</span>
+                  </div>
+                  <div class="filter-price__block">
+                    <span class="filter-price__text">до</span>
+                    <div class="filter-price__to"></div>
+                    <span class="filter-price__rub">₽</span>
+                  </div>
+                </label>
+
+                <input class="filter-price__input" type="text" data-min="0" data-max="1200" data-from="100"
+                  data-to="1000">
+              </form>
+            </li>
+
+          </ul>
+          <div class="catalog-page__contant">
+
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
 
     <section class="info">
       <div class="container">

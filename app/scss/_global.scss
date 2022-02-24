@@ -60,6 +60,20 @@ body {
   overflow: hidden;
 }
 
+.lock {
+  overflow: hidden;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
 .hidden {
   display: none;
 }
@@ -191,15 +205,12 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 40px;
-  margin-right: -19px;
+  margin: 0 -14px 40px;
   @include mq("desktop", max) {
-    margin-bottom: 14px;
-    margin-right: -24px;
+    margin-bottom: 12px;
   }
   &__item {
-    margin-bottom: 10px;
-    margin-right: 19px;
+    margin: 0 14px 14px;
     @include mq("desktop", max) {
       margin-right: 24px;
     }
@@ -252,4 +263,31 @@ body {
 .test {
   height: 100px;
   background-color: red;
+}
+
+.breadcrumbs {
+  padding: 24px 0;
+  background-color: $silver-100;
+  line-height: 1.2;
+  &__list {
+    display: flex;
+  }
+  &__item:not(:last-child) {
+    position: relative;
+    padding-right: 16px;
+    &::after {
+      content: "";
+      position: absolute;
+      right: 4px;
+      top: 50%;
+      width: 14px;
+      height: 10px;
+      background-image: url(../images/sprite.svg#arrow-right);
+      position: absolute;
+      background-size: cover;
+      background-repeat: no-repeat;
+      filter: invert(82%) sepia(13%) saturate(0%) hue-rotate(240deg) brightness(92%) contrast(93%);
+      transform: translateY(-50%);
+    }
+  }
 }

@@ -92,9 +92,9 @@
 
     // Стрелки смогла убрать только через !important. Видимо, из-за slick-slider. Если знаешь другой способ, подскажи, плиз
 
-    @include mq("desktop-2", max) {
-      display: none !important;
-    }
+    // @include mq("desktop-2", max) {
+    //   display: none !important;
+    // }
   }
 
   .slick-prev {
