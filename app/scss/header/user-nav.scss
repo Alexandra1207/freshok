@@ -1,0 +1,83 @@
+.user-nav {
+  display: flex;
+  align-items: center;
+  &__item:not(:last-child) {
+    margin-right: 10px;
+    @include mq("phone", max) {
+      margin-right: 0;
+    }
+  }
+  &__item--search {
+    @include mq("desktop", min) {
+      display: none;
+    }
+  }
+  &__item--user {
+    @include mq("desktop", max) {
+      display: none;
+    }
+  }
+  &__item-cart {
+    position: relative;
+  }
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 3px;
+    transition: background-color 0.5s;
+  }
+  &__link:hover {
+    background-color: rgba($white, 0.1);
+  }
+  &__link:focus {
+    background-color: rgba($white, 0.1);
+    box-shadow: inset 0 0 0 3px $green-100;
+  }
+  &__link:active {
+    background-color: rgba($white, 0.1);
+    opacity: 0.5;
+  }
+
+  &__num {
+    position: absolute;
+    top: 4px;
+    left: 3px;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    font-size: 10px;
+    line-height: 1.8;
+    color: $red-900;
+    background-color: $white;
+    border-radius: 50%;
+    @include mq("phone", max) {
+      top: 6px;
+      left: 6px;
+    }
+  }
+}
+
+.user-icon,
+.heart-icon,
+.cart-icon {
+  fill: $white;
+}
+
+.user-icon {
+  width: 25px;
+  height: 32px;
+}
+
+.heart-icon,
+.cart-icon {
+  width: 36px;
+  height: 34px;
+  @include mq("phone", max) {
+    width: 24px;
+    height: 23px;
+  }
+}

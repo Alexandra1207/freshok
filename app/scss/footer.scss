@@ -3,9 +3,8 @@
   color: $white;
   background-color: $dark-800;
   &__top {
-    padding: 32px 0;
+    padding: 30px 0;
     border-bottom: 1px solid rgba($white, 0.1);
-
 
     @include mq("tablet-2", max) {
       text-align: center;
@@ -13,7 +12,8 @@
         padding: 0;
       }
       .logo {
-        width: 200px;
+        padding: 0 30px;
+        width: 260px;
         height: 60px;
         &__img {
           display: block;
@@ -36,11 +36,14 @@
       flex-direction: column;
     }
   }
+
+  // не стала давать паддинг этому блоку, так как кнопка меньше самого маленького экрана, а если дать, то она опять перерепрыгивает
+
   &__form {
     max-width: 310px;
     width: 100%;
     text-align: left;
-    
+
     @include mq("tablet-2", max) {
       text-align: center;
       margin: 0 auto;
@@ -65,7 +68,7 @@
     max-width: 180px;
     width: 100%;
     margin-right: -5px;
-    padding: 10px;
+    padding: 11px;
     border: transparent;
     outline: transparent;
     border-radius: 6px 0 0 6px;
@@ -94,35 +97,45 @@
     color: rgba($white, 0.5);
     box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
   }
-
+  &__wrapper-list {
+    @include mq("tablet-2", max) {
+      display: flex;
+      border-bottom: 1px solid rgba($white, 0.1);
+    }
+  }
   &__list {
     column-count: 3;
-    column-gap: 75px;
-    column-width: 130px;
+    column-gap: 135px;
+    column-width: 70px;
     padding-left: 65px;
-    @include mq("desktop", min) {
-      padding-left: 175px;
-    } 
     @include mq("desktop", max) {
       column-count: 2;
-      padding-left: 110px;
+      padding-left: 0;
     }
     @include mq("tablet-2", max) {
       text-align: left;
-      column-gap: 45px;
+      column-gap: 65px;
       column-width: 115px;
-      padding: 24px 0 10px 65px;
-      border-bottom: 1px solid rgba($white, 0.1);
+      padding: 24px 30px;
+      margin: 0 auto;
       column-count: 3;
     }
     @include mq("tablet", max) {
       column-count: 2;
     }
+    @include mq("phone", max) {
+      padding: 21px 15px 10px;
+      column-gap: 105px;
+      column-width: 70px;
+    }
+    @include mq("tablet-2", min) {
+      padding: 0;
+    }
   }
 
   &__contacts {
     @include mq("tablet-2", max) {
-      padding-bottom: 24px;
+      padding: 0 30px 24px;
       border-bottom: 1px solid rgba($white, 0.1);
       order: -1;
     }
@@ -139,7 +152,7 @@
   &__address-link {
     display: block;
     font-style: normal;
-    margin-bottom: 15px;
+    margin-bottom: 16px;
   }
 
   &__bottom {

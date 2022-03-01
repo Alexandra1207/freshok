@@ -1,15 +1,13 @@
 .top-slider {
-  &__item {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
   &__container {
     display: flex;
     align-items: center;
     width: 100%;
     min-height: 600px;
     padding: 50px 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     @include mq("tablet-2", max) {
       min-height: 500px;
     }
@@ -79,8 +77,7 @@
       letter-spacing: 0.03em;
     }
   }
-  .slick-prev,
-  .slick-next {
+  .slick-arrow {
     position: absolute;
     top: 60%;
     padding: 13px;
@@ -89,12 +86,6 @@
     transform: translateY(-50%);
     z-index: 2;
     transition: background-color 0.3s;
-
-    // Стрелки смогла убрать только через !important. Видимо, из-за slick-slider. Если знаешь другой способ, подскажи, плиз
-
-    // @include mq("desktop-2", max) {
-    //   display: none !important;
-    // }
   }
 
   .slick-prev {
@@ -105,37 +96,31 @@
     right: 57px;
   }
 
-  .arrow-left,
-  .arrow-right {
+  .arrow {
     width: 40px;
     height: 30px;
     fill: $dark-500;
     transition: fill 0.3s;
   }
 
-  .slick-prev:focus,
-  .slick-next:focus {
+  .slick-arrow:focus {
     background-color: #f2f2f2;
     box-shadow: 0 0 0 3px rgba(99, 166, 14, 0.5);
   }
 
-  .slick-prev:hover,
-  .slick-next:hover {
+  .slick-arrow:hover {
     background-color: $green-200;
   }
 
-  .slick-prev:hover .arrow-left,
-  .slick-next:hover .arrow-right {
+  .slick-arrow:hover .arrow {
     fill: $green-900;
   }
 
-  .slick-prev:active,
-  .slick-next:active {
+  .slick-arrow:active {
     background-color: #f3f3f2;
   }
 
-  .slick-prev:active .arrow-left,
-  .slick-next:active .arrow-right {
+  .slick-arrow:active .arrow {
     fill: $green-900;
   }
 
@@ -145,12 +130,9 @@
     background-color: rgba($white, 0.8);
   }
 
-  .slick-disabled .arrow-right,
-  .slick-disabled .arrow-left,
-  .slick-disabled:hover .arrow-left,
-  .slick-disabled:hover .arrow-right,
-  .slick-disabled:active .arrow-left,
-  .slick-disabled:active .arrow-right {
+  .slick-disabled .arrow,
+  .slick-disabled:hover .arrow,
+  .slick-disabled:active .arrow {
     fill: $silver-600;
   }
   .slick-dots {
@@ -162,7 +144,7 @@
       margin-top: -75px;
     }
     @include mq("phone", max) {
-      margin-top: -40px;
+      margin-top: -37px;
     }
 
     button {

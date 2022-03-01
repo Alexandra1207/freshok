@@ -1,8 +1,12 @@
 .top {
-  padding: 72px 0;
-   @include mq("desktop", max) {
-     padding: 48px 0;
-   }
+  padding: 72px 0 73px;
+  @include mq("desktop", max) {
+    padding: 48px 0;
+  }
+  &__product {
+    @include mq("tablet", max) {
+      max-width: 300px;
+      width: 100%;
+    }
+  }
 }
-
-

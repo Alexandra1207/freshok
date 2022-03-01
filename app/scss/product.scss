@@ -340,11 +340,6 @@
   cursor: pointer;
 }
 
-.heart:hover {
-  fill: $yellow-900;
-  cursor: pointer;
-}
-
 .heart:active {
   fill: rgba($yellow-900, 0.5);
 }

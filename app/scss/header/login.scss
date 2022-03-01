@@ -1,0 +1,48 @@
+.login {
+  padding: 8px 0;
+  background-color: $green-900;
+  font-size: 18px;
+  line-height: 1;
+  color: $white;
+  @include mq("phone", min) {
+    padding: 20px 0;
+  }
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+  &__log {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-right: 19px;
+    @include mq("phone", min) {
+      padding-right: 70px;
+    }
+  }
+  &__log::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    right: 0;
+    width: 1px;
+    height: 18px;
+    background-color: $white;
+    @include mq("phone", min) {
+      top: 5px;
+      height: 25px;
+    }
+  }
+  &__user-icon {
+    margin-right: 15px;
+    @include mq("phone", min) {
+      margin-right: 25px;
+    }
+  }
+  &__registration {
+    padding: 0 20px;
+    @include mq("phone", min) {
+      padding: 0 20px 0 70px;
+    }
+  }
+}

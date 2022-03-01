@@ -678,8 +678,8 @@
     <section class="top-slider">
       <ul class="top-slider__list">
 
-        <li class="top-slider__item" style="background-image: url('images/slider/slide1.jpg')">
-          <div class="top-slider__container">
+        <li class="top-slider__item">
+          <div class="top-slider__container" style="background-image: url('images/slider/slide1.jpg')">
             <div class="top-slider__inner">
               <h2 class="top-slider__title">
                 СВЕЖАЧОК ВАМ в ХАТУ
@@ -691,12 +691,13 @@
               <a class="btn top-slider__btn" href="#">
                 Купить сейчас
               </a>
+              </a>
             </div>
           </div>
         </li>
 
-        <li class="top-slider__item" style="background-image: url('images/slider/slide2.jpg')">
-          <div class="top-slider__container">
+        <li class="top-slider__item">
+          <div class="top-slider__container" style="background-image: url('images/slider/slide2.jpg')">
             <div class="top-slider__inner">
               <h2 class="top-slider__title">
                 НАКРУТИ СЕБЕ ТОМАТОВ <span>АКЦИЯ: 3 кг по цене 1</span>
@@ -711,8 +712,8 @@
           </div>
         </li>
 
-        <li class="top-slider__item" style="background-image: url('images/slider/slide3.jpg')">
-          <div class="top-slider__container">
+        <li class="top-slider__item">
+          <div class="top-slider__container" style="background-image: url('images/slider/slide3.jpg')">
             <div class="top-slider__inner">
               <h2 class="top-slider__title">
                 Пусть остальные позеленеют от зависти <span>Распродажа зелени</span>
@@ -1168,7 +1169,7 @@
           Акции
         </h2>
         <div data-ref="container-2">
-          <ul class="filter">
+          <ul class="filter promo__filter">
             <li class="filter__item promo__item">
               <button class="filter__btn" data-filter="all" type="button">Все товары</button>
             </li>
@@ -1590,49 +1591,48 @@
         </a>
         <div class="footer__inner">
 
-
           <form class="footer__form">
             <label class="footer__label" for="input-email">Следите за нашими акциями</label>
             <input class="footer__input" type="email" name="email" placeholder="email@email.com" id="input-email"
               required>
             <button class="footer__btn" type="submit">ПОДПИСАТЬСЯ</button>
           </form>
+          <div class="footer__wrapper-list">
+            <ul class="footer__list">
+              <li class="footer__item">
+                <a class="link" href="#">О нас</a>
+              </li>
 
+              <li class="footer__item">
+                <a class="link" href="#">Контакты</a>
+              </li>
 
-          <ul class="footer__list">
-            <li class="footer__item">
-              <a class="link" href="#">О нас</a>
-            </li>
+              <li class="footer__item">
+                <a class="link" href="#">Публичная оферта</a>
+              </li>
 
-            <li class="footer__item">
-              <a class="link" href="#">Контакты</a>
-            </li>
+              <li class="footer__item">
+                <a class="link" href="#">Оплата и доставка</a>
+              </li>
 
-            <li class="footer__item">
-              <a class="link" href="#">Публичная оферта</a>
-            </li>
+              <li class="footer__item">
+                <a class="link" href="#">Вакансии</a>
+              </li>
 
-            <li class="footer__item">
-              <a class="link" href="#">Оплата и доставка</a>
-            </li>
+              <li class="footer__item">
+                <a class="link" href="#">Акции</a>
+              </li>
 
-            <li class="footer__item">
-              <a class="link" href="#">Вакансии</a>
-            </li>
+              <li class="footer__item">
+                <a class="link" href="#">Отзывы</a>
+              </li>
 
-            <li class="footer__item">
-              <a class="link" href="#">Акции</a>
-            </li>
+              <li class="footer__item">
+                <a class="link" href="#">Новости</a>
+              </li>
 
-            <li class="footer__item">
-              <a class="link" href="#">Отзывы</a>
-            </li>
-
-            <li class="footer__item">
-              <a class="link" href="#">Новости</a>
-            </li>
-
-          </ul>
+            </ul>
+          </div>
 
           <div class="footer__contacts">
             <address class="footer__address">
@@ -1640,7 +1640,6 @@
               <a class="footer__address-link link" href="#">
                 Санкт-Петербург, ул. Ленина, 1
               </a>
-
             </address>
             <ul class="social">
               <li class="social__item">
@@ -1675,6 +1674,7 @@
               </li>
 
             </ul>
+            
           </div>
         </div>
       </div>

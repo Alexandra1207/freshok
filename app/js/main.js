@@ -11,15 +11,17 @@ $(function () {
       $('.filter-price__from').text(data.from);
       $('.filter-price__to').text(data.to);
     },
-
   });
 
   $('.product__num').styler();
 
+
+// section top-slider
+
   $('.top-slider__list').slick({
     dots: true,
-    prevArrow: '<button type="button" class="slick-prev"><svg class="arrow-left"><use xlink:href="images/sprite.svg#arrow-left"></use></svg></button>',
-    nextArrow: '<button type="button" class="slick-next"><svg class="arrow-right"><use xlink:href="images/sprite.svg#arrow-right"></use></svg></button>',
+    prevArrow: '<button type="button" class="slick-prev"><svg class="arrow"><use xlink:href="images/sprite.svg#arrow-left"></use></svg></button>',
+    nextArrow: '<button type="button" class="slick-next"><svg class="arrow"><use xlink:href="images/sprite.svg#arrow-right"></use></svg></button>',
     autoplay: true,
     autoplaySpeed: 2000,
     infinite: false,

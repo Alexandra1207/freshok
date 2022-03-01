@@ -1,0 +1,38 @@
+.catalog {
+  position: absolute;
+  max-width: 236px;
+  width: 100%;
+  background-color: $white;
+  border-radius: 0px 0px 6px 6px;
+  z-index: 2;
+  transform: translateY(-200%);
+  transition: transform 0.3s;
+  &__link {
+    display: block;
+    padding: 15px 24px;
+    font-size: 16px;
+    line-height: 1.2;
+    color: #000000;
+    border-bottom: 1px solid rgba(193, 193, 193, 0.3);
+    transition: color 0.3s, box-shadow 0.3s;
+  }
+  &__link:hover {
+    color: $green-900;
+    box-shadow: inset 3px 0 0 0 $green-900;
+  }
+  &__link:focus {
+    border: 3px solid #e0edcf;
+  }
+  &__link:active {
+    color: $silver-600;
+  }
+  &.catalog--active {
+    max-height: calc(70vh - 225px);
+    transform: translateY(0);
+    overflow-y: scroll;
+    scrollbar-width: none;
+  }
+  &.catalog--active::-webkit-scrollbar {
+    width: 0;
+  }
+}

@@ -43,7 +43,7 @@ body {
   text-align: center;
   @include mq("desktop", max) {
     font-size: 24px;
-    margin-bottom: 22px;
+    margin-bottom: 23px;
   }
 }
 
@@ -76,6 +76,35 @@ body {
 
 .hidden {
   display: none;
+}
+.logo {
+  display: inline-block;
+  width: 200px;
+  height: 60px;
+  transition: opacity 0.3s;
+  @include mq("phone", max) {
+    width: 36px;
+    height: 40px;
+  }
+  &__img {
+    @include mq("phone", max) {
+      display: none;
+    }
+  }
+  &__img-short {
+    @include mq("phone", min) {
+      display: none;
+    }
+  }
+}
+
+.logo:hover {
+  opacity: 0.7;
+}
+
+.logo:focus {
+  box-shadow: inset 0 0 0 3px #eff6e7;
+  border-radius: 3px;
 }
 
 .link {
@@ -205,15 +234,12 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 0 -14px 40px;
+  margin: 0 -12px 37px;
   @include mq("desktop", max) {
     margin-bottom: 12px;
   }
   &__item {
-    margin: 0 14px 14px;
-    @include mq("desktop", max) {
-      margin-right: 24px;
-    }
+    margin: 0 12px 14px;
   }
 
   &__btn {
@@ -237,6 +263,7 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 30px;
+    justify-content: space-around;
     margin-bottom: 46px;
     @include mq("desktop", max) {
       grid-gap: 20px;
@@ -245,10 +272,14 @@ body {
       grid-template-columns: repeat(3, 1fr);
     }
 
-    @include mq("phone", max) {
+    @include mq("tablet", max) {
       grid-template-columns: repeat(2, 1fr);
+      grid-gap: 30px;
+      margin: 0 25px 23px;
+    }
+    @include mq("phone", max) {
       grid-gap: 5px;
-      margin-bottom: 23px;
+      margin: 0 0 23px;
     }
   }
   &__add {

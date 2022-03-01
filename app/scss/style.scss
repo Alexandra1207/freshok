@@ -3,7 +3,13 @@
 @import "reset";
 @import "libs";
 @import "global";
-@import "header";
+@import "header/top";
+@import "header/content";
+@import "header/catalog";
+@import "header/menu";
+@import "header/user-nav";
+@import "header/cart";
+@import "header/login";
 @import "index/top-slider";
 @import "index/info";
 @import "index/top";
@@ -14,6 +20,5 @@
 @import "footer";
 @import "product";
 @import "catalog";
-
 
 @import "media";
