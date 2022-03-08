@@ -1,6 +1,21 @@
 
 $(function () {
 
+  // Каталог переключение списков
+
+  $('.catalog-content__filter-btn').on('click', function () {
+    $('.catalog-content__filter-btn').removeClass('catalog-content__filter-btn--active');
+    $(this).addClass('catalog-content__filter-btn--active');
+  });
+
+  $('.button-list').on('click', function () {
+    $('.catalog-content__items').addClass('catalog-content__items--list');
+  });
+  $('.button-grid').on('click', function () {
+    $('.catalog-content__items').removeClass('catalog-content__items--list');
+  })
+
+
   $(".filter-price__input").ionRangeSlider({
     type: "double",
     onStart: function (data) {
@@ -16,7 +31,7 @@ $(function () {
   $('.product__num').styler();
 
 
-// section top-slider
+  // section top-slider
 
   $('.top-slider__list').slick({
     dots: true,
@@ -29,8 +44,8 @@ $(function () {
       {
         breakpoint: 1600,
         settings: {
-        dots: true,
-        arrows: false,
+          dots: true,
+          arrows: false,
         }
       }
     ]
@@ -103,6 +118,8 @@ $(function () {
     }
   });
 
+  // липкий хэдер
+
   let header = $('.header__content');
 
   $(window).scroll(function () {
@@ -113,6 +130,7 @@ $(function () {
     }
   });
 
+  // панель поиска
 
   $('.header__search-min').on('click', function () {
     $('.header__search-adaptive').toggleClass('header__search-adaptive--active');
@@ -159,41 +177,6 @@ const swiper = new Swiper('.swiper', {
   }
 
 });
-
-// $(function () {
-//   if ($(window).width() < 1200) {
-//     const swiper = new Swiper('.swiper', {
-//       loop: true,
-//       slidesPerView: 4,
-//       spaceBetween: 93,
-//       autoplay: true,
-//       autoplaySpeed: 3000,
-//       slidesPerGroup: 4
-//     });
-//     if ($(window).width() < 992) {
-//       const swiper = new Swiper('.swiper', {
-//         loop: true,
-//         slidesPerView: 3,
-//         spaceBetween: 93,
-//         autoplay: true,
-//         autoplaySpeed: 3000,
-//         slidesPerGroup: 3
-//       });
-//     }
-//     if ($(window).width() < 560) {
-//       const swiper = new Swiper('.swiper', {
-//         loop: true,
-//         slidesPerView: 2,
-//         spaceBetween: 93,
-//         autoplay: true,
-//         autoplaySpeed: 3000,
-//         slidesPerGroup: 2
-//       });
-//     }
-//   }
-
-// });
-
 
 
 const overflowCart = document.querySelectorAll('.overflow-cart');

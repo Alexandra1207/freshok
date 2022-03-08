@@ -1,16 +1,16 @@
 .header {
   &__content {
-    position: fixed;
-    top: 50px;
+    // position: fixed;
+    // top: 50px;
     z-index: 200;
     left: 0;
     right: 0;
     padding: 23px 0;
     background-color: $green-900;
     transition: all 0.3s;
-    @media (max-height: 1200px) and (orientation: landscape) {
-      padding: 0;
-    }
+    // @media (max-height: 1200px) and (orientation: landscape) {
+    //   padding: 0;
+    // }
     @include mq("tablet", max) {
       padding: 15px 0;
     }

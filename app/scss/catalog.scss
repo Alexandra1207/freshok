@@ -1,14 +1,15 @@
 .catalog-page {
   padding: 48px 0 72px;
+  line-height: 1.2;
   &__title {
     margin-bottom: 48px;
     @extend %ruda-700;
     font-size: 42px;
-    line-height: 1.2;
     letter-spacing: 0.03em;
   }
   &__inner {
     display: flex;
+    justify-content: space-between;
   }
 }
 
@@ -26,7 +27,6 @@
     padding: 18px;
     @extend %ruda-400;
     font-size: 24px;
-    line-height: 1.2;
     color: $dark-900;
     border-bottom: 1px solid $silver-600;
   }
@@ -46,12 +46,36 @@
   &__inner {
     padding: 18px;
     font-size: 18px;
-    line-height: 1.3;
   }
 }
 
+// тут использовала свойство scroll-snap-type, не знаю на сколько оно корректно, На caniuse проверила, вроде норм. Если так нельзя, скажи, я исправлю
+
 .filters-categories {
-  height: 364px;
+  // height: 364px;
+  &__inner {
+    height: 298px;
+    padding: 10px 18px 12px;
+    overflow-y: auto;
+    scroll-snap-type: y;
+  }
+  &__label {
+    line-height: 1.3;
+    cursor: pointer;
+  }
+  &__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    &:checked + .filters-categories__checkbox {
+      color: $green-900;
+    }
+  }
+  &__checkbox {
+    padding: 6px 0 5px;
+  }
 }
 
 .filters-choice {
@@ -61,7 +85,7 @@
     padding-left: 36px;
   }
   &__label:not(:last-child) {
-    margin-bottom: 12px;
+    margin-bottom: 14px;
   }
   &__input {
     position: absolute;
@@ -91,7 +115,6 @@
 .filter-price {
   &__label {
     display: flex;
-    // align-items: center;
     justify-content: space-between;
     font-size: 16px;
     color: $silver-600;
@@ -101,9 +124,6 @@
     display: flex;
     align-items: center;
   }
-  // span {
-  //   color: $silver-600;
-  // }
   &__from,
   &__to {
     display: flex;
@@ -121,9 +141,6 @@
     @extend %ruda-400;
     line-height: 1.2;
   }
-  // &__rub--from {
-  //   margin-right: 24px;
-  // }
 }
 
 .irs--flat .irs-line {
@@ -160,6 +177,138 @@
   display: none;
 }
 
-// .irs--flat .irs-from, .irs--flat .irs-to, .irs--flat .irs-single {
-//   display: none;
-// }
+.catalog-content {
+  // width: 100%;
+  &__filter {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 48px;
+  }
+  &__filter-item:not(:last-child) {
+    margin-right: 15px;
+  }
+  &__filter-sort {
+    position: relative;
+    height: 47px;
+    // padding: 0 17px 0 7px;
+    letter-spacing: 0.03em;
+    color: $dark-500;
+    background-color: $white;
+    border: 1px solid $silver-600;
+    border-radius: 3px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    background-image: url(../images/sprite.svg#arrow-down);
+    background-size: 11px 11px;
+    background-repeat: no-repeat;
+  }
+
+  &__choice {
+    width: 149px;
+    padding-left: 7px;
+    background-position: 122px center;
+  }
+  &__quantity {
+    width: 99px;
+    padding-left: 10px;
+    background-position: 73px center;
+  }
+  &__filter-btn {
+    width: 47px;
+    height: 47px;
+    background-color: $silver-100;
+  }
+  &__filter-btn--active {
+    .filter__img {
+      filter: invert(52%) sepia(32%) saturate(4739%) hue-rotate(54deg) brightness(101%) contrast(89%);
+    }
+  }
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    margin-bottom: 60px;
+
+    .product {
+      display: block;
+      padding: 53px 0 18px;
+      &__content {
+        height: 100px;
+        padding: 0 16px 0 19px;
+      }
+      &__availability {
+        margin-bottom: 0;
+      }
+      &__name {
+        display: block;
+      }
+    }
+
+    .product-mini__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 7px;
+      padding: 0 14px 0 19px;
+    }
+
+    &.catalog-content__items--list {
+      grid-template-columns: repeat(2, 1fr);
+      .product {
+        display: flex;
+        flex-direction: row;
+        height: 162px;
+        max-width: 466px;
+        width: 100%;
+        padding: 14px 0 18px;
+        &__badges {
+          top: 7px;
+          left: 8px;
+        }
+        &__img {
+          width: 200px;
+          height: 138px;
+        }
+        &__wrapper {
+          max-width: 265px;
+          width: 100%;
+          // padding: 14px 0;
+        }
+        .product-mini__inner {
+          margin-bottom: 13px;
+        }
+        &__content {
+          height: 110px;
+        }
+        &__name {
+          max-width: 200px;
+          width: 100%;
+        }
+        .product__title {
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+        }
+      }
+      .heart-block {
+        top: 35%;
+        right: 10px;
+      }
+    }
+  }
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+  }
+
+}
+
+.filter__img {
+  width: 35px;
+  height: 35px;
+  fill: $silver-600;
+}

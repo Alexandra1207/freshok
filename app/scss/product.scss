@@ -3,6 +3,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  max-width: 300px;
+  width: 100%;
   height: 408px;
   padding: 56px 0 18px;
   border: 1px solid rgba(17, 17, 17, 0.2);
@@ -88,8 +90,8 @@
     transition: all 0.5s;
   }
 
-  &:hover &__link::after,
-  &:hover &__search,
+  &:hover .product__link::after,
+  &:hover .product__search,
   &__link:focus::after,
   &__link:focus &__search {
     opacity: 1;
@@ -98,7 +100,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100px;
+    // height: 100px;
     padding: 0 18px 0;
     @include mq("desktop", max) {
       padding: 0 11px 0;
@@ -353,16 +355,16 @@
   border: 1px solid $silver-600;
   border-radius: 6px;
   transition: border 0.3s;
-   @include mq("desktop-2", max) {
-     height: 140px;
-   }
-   @include mq("phone", max) {
+  @include mq("desktop-2", max) {
+    height: 140px;
+  }
+  @include mq("phone", max) {
     max-width: 300px;
     width: 100%;
     height: 124px;
-    margin: 0 auto;   
-    padding-top: 13px; 
-   }
+    margin: 0 auto;
+    padding-top: 13px;
+  }
 
   &:hover {
     border: 1px solid $green-900;
@@ -403,6 +405,9 @@
   .product__price::after {
     content: "₽";
   }
+  &:hover .product__link::after {
+    opacity: 1;
+  }
 }
 
 .product-cart {
@@ -412,21 +417,23 @@
   align-items: center;
   height: 84px;
   padding: 8px 10px 12px 12px;
-   @include mq("phone", max) {
-     height: 126px;
-   }
+  @include mq("phone", max) {
+    height: 126px;
+  }
   .product-mini__link {
     margin-right: 22px;
     @include mq("phone", max) {
       margin-right: 9px;
     }
-
   }
   .product__link::after {
     transition: opacity 0.3s;
   }
   .product__link:hover::after {
     opacity: 1;
+  }
+  .product__img {
+    height: 100%;
   }
   &__content {
     display: flex;
@@ -569,4 +576,5 @@
   .cart__rub::after {
     font-size: 14px;
   }
+
 }
