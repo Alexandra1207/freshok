@@ -1,7 +1,15 @@
 
 $(function () {
 
-  // Каталог переключение списков
+  // Выплывающее меню фильтров на адаптиве
+  $('.catalog-content__filter-btn-adaptive').on('click', function() {
+    $('.filters').slideToggle();
+  })
+  $('.close-btn').on('click', function () {
+    $('.filters').slideToggle();
+  })
+
+  // Каталог, переключение списков
 
   $('.catalog-content__filter-btn').on('click', function () {
     $('.catalog-content__filter-btn').removeClass('catalog-content__filter-btn--active');
@@ -13,11 +21,11 @@ $(function () {
   });
   $('.button-grid').on('click', function () {
     $('.catalog-content__items').removeClass('catalog-content__items--list');
-  })
+  });
 
 
-  $(".filter-price__input").ionRangeSlider({
-    type: "double",
+  $('.filter-price__input').ionRangeSlider({
+    type: 'double',
     onStart: function (data) {
       $('.filter-price__from').text(data.from);
       $('.filter-price__to').text(data.to);

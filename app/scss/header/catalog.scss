@@ -5,8 +5,9 @@
   background-color: $white;
   border-radius: 0px 0px 6px 6px;
   z-index: 2;
+  opacity: 0;
   transform: translateY(-200%);
-  transition: transform 0.3s;
+  transition: transform 0.3s, opacity 1s;
   &__link {
     display: block;
     padding: 15px 24px;
@@ -31,6 +32,7 @@
     transform: translateY(0);
     overflow-y: scroll;
     scrollbar-width: none;
+    opacity: 1;
   }
   &.catalog--active::-webkit-scrollbar {
     width: 0;
