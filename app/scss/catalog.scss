@@ -29,7 +29,6 @@
     margin-right: 90px;
   }
   @include mq("tablet-2", max) {
-    display: none;
     position: absolute;
     top: -373px;
     left: -30px;
@@ -37,6 +36,12 @@
     margin-right: 0;
     background-color: $white;
     z-index: 5;
+    transform: translateX(-500%);
+     transition: opacity 0.5s;
+  }
+  &.filters--active {
+    transform: translateX(0);
+   
   }
   @include mq("tablet", max) {
     top: -357px;
@@ -74,7 +79,7 @@
       align-items: center;
       justify-content: flex-end;
       border: none;
-      .close-btn {
+      .filters__close-btn {
         margin-right: 30px;
       }
       .close-img {
@@ -113,7 +118,6 @@
 // тут использовала свойство scroll-snap-type, не знаю на сколько оно корректно, На caniuse проверила, вроде норм. Если так нельзя, скажи, я исправлю
 
 .filters-categories {
-  // height: 364px;
   &__inner {
     height: 298px;
     padding: 10px 18px 12px;
@@ -146,6 +150,7 @@
   display: flex;
   flex-direction: column;
   &__label {
+    position: relative;
     padding-left: 36px;
   }
   &__label:not(:last-child) {
@@ -265,7 +270,6 @@
     }
   }
   &__filter-sort {
-    // position: relative;
     height: 47px;
     padding: 0 37px 0 0;
     letter-spacing: 0.03em;
@@ -289,7 +293,6 @@
   }
 
   &__choice {
-    // padding: 0 7px 0;
     min-width: 149px;
     padding-left: 9px;
     background-position: 92% center;
@@ -302,7 +305,6 @@
   &__quantity {
     min-width: 99px;
     padding-left: 7px;
-    // background-position: 73px center;
     background-position: 86% center;
     @include mq("phone", max) {
       min-width: 0;
@@ -348,7 +350,6 @@
     }
 
     .product {
-      // display: block;
       padding: 53px 0 18px;
       @include mq("tablet-2", max) {
         width: 300px;

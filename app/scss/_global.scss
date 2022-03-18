@@ -35,9 +35,6 @@ select {
   }
 }
 
-.lock {
-  overflow: hidden;
-}
 
 .title {
   margin-bottom: 28px;
@@ -67,7 +64,7 @@ select {
 
 .lock {
   overflow: hidden;
-  position: relative;
+  position: relative;  
   &::after {
     content: "";
     position: absolute;
@@ -342,11 +339,6 @@ select {
     justify-content: center;
   }
 
-  // // .pagination__item
-
-  // &__item {
-
-  // }
   &__item:not(:last-child) {
     margin-right: 6px;
   }
@@ -356,11 +348,6 @@ select {
       display: none;
     }
   }
-
-  // ,
-  // &__item::nth-last-child(3)
-
-
   &__link {
     display: flex;
     justify-content: center;
@@ -376,8 +363,4 @@ select {
   &__link--disabled {
     fill: $silver-600;
   }
-  // // .pagination__link
-
-  // &__link {
-  // }
 }

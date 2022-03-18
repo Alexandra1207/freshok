@@ -11,8 +11,15 @@
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 
-<body>
 
+
+<!-- Тут проблемы с выпадающим меню. У меня перестало работать затемнение при выпадении фильтров на странице каталогов и корзины на главной странице. До этого работало, но при этом не выпадали выпадашки в хэдер на странице каталога. Я поменяла в файле js какой-то порядок, стало работать , но пропало затемнение -->
+
+<!-- и липкий хэдер неадекватно почему-то себя ведет. То подниматься не хочет. То размер меняет -->
+
+<!-- И еще проблемы с плавностью. Не для всех выпадашек получается ее сделать. Помоги, пожалуйста -->
+
+<body>  
   <header class="header">
     <div class="header__top">
       <div class="container">
@@ -677,6 +684,7 @@
   <main class="main">
     <section class="breadcrumbs">
       <div class="container">
+        <h2 class="sr-only">Хлебные крошки</h2>
         <ul class="breadcrumbs__list">
           <li class="breadcrumbs__item">
             <a class="breadcrumbs__link" href="#">
@@ -697,7 +705,7 @@
         <div class="catalog-page__inner">
           <div class="filters">
             <div class="filters__top">
-              <button class="close-btn" type="button">
+              <button class="filters__close-btn" type="button">
                 <svg class="close-img">
                   <use xlink:href="images/sprite.svg#close-btn"></use>
                 </svg>
@@ -1588,11 +1596,6 @@
                   </a>
                 </li>
               </ul>
-              <!-- <a class="pagination__arrows" href="#">
-                  <svg class="arrow">
-                    <use xlink:href="images/sprite.svg#arrow-right"></use>
-                  </svg>
-                </a> -->
             </div>
 
           </div>

@@ -6,12 +6,12 @@
     line-height: 1.38;
     color: $white;
     background-color: #31352b;
-    // border-bottom: 110px solid $green-900;
-    // @include mq("tablet", max) {
-    //   border-bottom: 90px solid $green-900;
-    // }
-    // @include mq("phone", max) {
-    //   border-bottom: 62px solid $green-900;
-    // }
+    border-bottom: 110px solid $green-900;
+    @include mq("tablet", max) {
+      border-bottom: 90px solid $green-900;
+    }
+    @include mq("phone", max) {
+      border-bottom: 62px solid $green-900;
+    }
   }
 }

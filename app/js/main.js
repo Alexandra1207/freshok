@@ -1,13 +1,94 @@
 
 $(function () {
 
-  // Выплывающее меню фильтров на адаптиве
-  $('.catalog-content__filter-btn-adaptive').on('click', function() {
-    $('.filters').slideToggle();
-  })
-  $('.close-btn').on('click', function () {
-    $('.filters').slideToggle();
-  })
+  // Выплывание корзины
+
+
+  $('.user-nav__item-cart').on('click', function () {
+    $('.cart').toggleClass('cart--active');
+    $('body').addClass('lock');
+
+  });
+
+  $('.cart__btn-close').on('click', function () {
+    $('.cart').removeClass('cart--active');
+    $('body').removeClass('lock');
+  });
+
+  let userNav = $('.user-nav__item-cart');
+  let cart = $('.cart');
+
+  $(document).on('click', function (e) {
+    if (!userNav.is(e.target) && userNav.has(e.target).length === 0 &&
+      !cart.is(e.target) && cart.has(e.target).length === 0) {
+      cart.removeClass('cart--active');
+      $('body').removeClass('lock');
+    }
+  });
+
+  $('.menu__btn, .header__adaptive-link, .header__adaptive-catalog-btn, .header__address').on('click', function () {
+    $('.menu__btn, .header__adaptive').toggleClass('menu__btn--active');
+  });
+
+  let btnMenu = $('.menu__btn');
+  let adaptiveMenu = $('.header__adaptive');
+
+  $(document).on('click', function (e) {
+    if (!btnMenu.is(e.target) && btnMenu.has(e.target).length === 0 &&
+      !adaptiveMenu.is(e.target) && adaptiveMenu.has(e.target).length === 0) {
+      btnMenu.removeClass('menu__btn--active');
+      adaptiveMenu.removeClass('menu__btn--active');
+    }
+  });
+
+
+  $('.header__catalog-btn, .catalog__link').on('click', function () {
+    $('.catalog, .header__catalog-btn').toggleClass('catalog--active');
+  });
+
+
+
+
+
+
+  // Выплывающее меню фильтров на адаптиве. Не получилось договриться с методом toggle(). Мне кажется, с затемнением это не работает. Пришлось вернуться к add/removeClass. Если, вдруг, знаешь, как это делается, подскажи. 
+  // и еще не получается сделать плавность затемнения. Пробовала разные варианты trasition, не помогает 
+
+  $('.catalog-content__filter-btn-adaptive').on('click', function () {
+    $('.filters').addClass('filters--active');
+    $('body').addClass('lock');
+
+  });
+
+  $('.filters__close-btn').on('click', function () {
+    $('.filters').removeClass('filters--active');
+    $('body').removeClass('lock');
+  });
+
+  let btnCatalog = $('.header__catalog-btn');
+  let catalog = $('.catalog');
+
+  $(document).on('click', function (e) {
+    if (!btnCatalog.is(e.target) && btnCatalog.has(e.target).length === 0 &&
+      !catalog.is(e.target) && catalog.has(e.target).length === 0) {
+      catalog.removeClass('catalog--active');
+      btnCatalog.removeClass('catalog--active');
+    }
+  });
+
+
+
+  let filterBtn = $('.catalog-content__filter-btn-adaptive');
+  let filters = $('.filters');
+
+  $(document).on('click', function (e) {
+    if (!filterBtn.is(e.target) && filterBtn.has(e.target).length === 0 &&
+      !filters.is(e.target) && filters.has(e.target).length === 0) {
+      filters.removeClass('filters--active');
+      $('body').removeClass('lock');
+    }
+  });
+
 
   // Каталог, переключение списков
 
@@ -72,59 +153,7 @@ $(function () {
   var mixer2 = mixitup(containerEl2, config);
 
 
-  $('.menu__btn, .header__adaptive-link, .header__adaptive-catalog-btn, .header__address').on('click', function () {
-    $('.menu__btn, .header__adaptive').toggleClass('menu__btn--active');
-  });
-
-  let btnMenu = $('.menu__btn');
-  let adaptiveMenu = $('.header__adaptive');
-
-  $(document).on('click', function (e) {
-    if (!btnMenu.is(e.target) && btnMenu.has(e.target).length === 0 &&
-      !adaptiveMenu.is(e.target) && adaptiveMenu.has(e.target).length === 0) {
-      btnMenu.removeClass('menu__btn--active');
-      adaptiveMenu.removeClass('menu__btn--active');
-    }
-  });
-
-
-  $('.header__catalog-btn, .catalog__link').on('click', function () {
-    $('.catalog, .header__catalog-btn').toggleClass('catalog--active');
-  });
-
-  let btnCatalog = $('.header__catalog-btn');
-  let catalog = $('.catalog');
-
-  $(document).on('click', function (e) {
-    if (!btnCatalog.is(e.target) && btnCatalog.has(e.target).length === 0 &&
-      !catalog.is(e.target) && catalog.has(e.target).length === 0) {
-      catalog.removeClass('catalog--active');
-      btnCatalog.removeClass('catalog--active');
-    }
-  });
-
-
-  $('.user-nav__item-cart').on('click', function () {
-    $('.cart').toggleClass('cart--active');
-    $('body').addClass('lock');
-
-  });
-
-  $('.cart__btn-close').on('click', function () {
-    $('.cart').removeClass('cart--active');
-    $('body').removeClass('lock');
-  });
-
-  let userNav = $('.user-nav__item-cart');
-  let cart = $('.cart');
-
-  $(document).on('click', function (e) {
-    if (!userNav.is(e.target) && userNav.has(e.target).length === 0 &&
-      !cart.is(e.target) && cart.has(e.target).length === 0) {
-      cart.removeClass('cart--active');
-      $('body').removeClass('lock');
-    }
-  });
+  
 
   // липкий хэдер
 
