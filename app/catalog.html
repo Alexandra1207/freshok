@@ -19,7 +19,7 @@
 
 <!-- И еще проблемы с плавностью. Не для всех выпадашек получается ее сделать. Помоги, пожалуйста -->
 
-<body>  
+<body>
   <header class="header">
     <div class="header__top">
       <div class="container">
@@ -692,9 +692,9 @@
             </a>
           </li>
           <li class="breadcrumbs__item">
-            <a class="breadcrumbs__link" href="#">
+            <span class="breadcrumbs__link">
               Каталог товаров
-            </a>
+            </span>
           </li>
         </ul>
       </div>
@@ -706,108 +706,110 @@
           <div class="filters">
             <div class="filters__top">
               <button class="filters__close-btn" type="button">
-                <svg class="close-img">
+                <svg class="filters__close-img">
                   <use xlink:href="images/sprite.svg#close-btn"></use>
                 </svg>
               </button>
             </div>
             <ul class="filters__list">
               <li class="filters__item filters-categories">
-                <h4 class="filters__title">
+                <button class="filters__btn">
                   Категории
-                </h4>
+                </button>
                 <form class="filters__inner filters-categories__inner">
                   <label class="filters-categories__label">
-                    <input class="filters-categories__input" type="checkbox" name="filter">
-                    <span class="filters-categories__checkbox">
+                    <input class="filters-categories__input" type="radio" name="filter">
+                    <span class="filters-categories__radio">
                       Овощи и фрукты
                     </span>
                   </label>
                   <label class="filters-categories__label">
-                    <input class="filters-categories__input" type="checkbox" name="filter">
-                    <span class="filters-categories__checkbox">
+                    <input class="filters-categories__input" type="radio" name="filter">
+                    <span class="filters-categories__radio">
                       Бакалея
                     </span>
                   </label>
                   <label class="filters-categories__label">
-                    <input class="filters-categories__input" type="checkbox" name="filter">
-                    <span class="filters-categories__checkbox">
+                    <input class="filters-categories__input" type="radio" name="filter">
+                    <span class="filters-categories__radio">
                       Молочные продукты
                     </span>
                   </label>
                   <label class="filters-categories__label">
-                    <input class="filters-categories__input" type="checkbox" name="filter">
-                    <span class="filters-categories__checkbox">
+                    <input class="filters-categories__input" type="radio" name="filter">
+                    <span class="filters-categories__radio">
                       Хлеб
                     </span>
                   </label>
                   <label class="filters-categories__label">
-                    <input class="filters-categories__input" type="checkbox" name="filter">
-                    <span class="filters-categories__checkbox">
+                    <input class="filters-categories__input" type="radio" name="filter">
+                    <span class="filters-categories__radio">
                       Мясо
                     </span>
                   </label>
                   <label class="filters-categories__label">
-                    <input class="filters-categories__input" type="checkbox" name="filter">
-                    <span class="filters-categories__checkbox">
+                    <input class="filters-categories__input" type="radio" name="filter">
+                    <span class="filters-categories__radio">
                       Колбаса
                     </span>
                   </label>
                   <label class="filters-categories__label">
-                    <input class="filters-categories__input" type="checkbox" name="filter">
-                    <span class="filters-categories__checkbox">
+                    <input class="filters-categories__input" type="radio" name="filter">
+                    <span class="filters-categories__radio">
                       Рыба
                     </span>
                   </label>
                   <label class="filters-categories__label">
-                    <input class="filters-categories__input" type="checkbox" name="filter">
-                    <span class="filters-categories__checkbox">
+                    <input class="filters-categories__input" type="radio" name="filter">
+                    <span class="filters-categories__radio">
                       Алкоголь
                     </span>
                   </label>
                   <label class="filters-categories__label">
-                    <input class="filters-categories__input" type="checkbox" name="filter">
-                    <span class="filters-categories__checkbox">
+                    <input class="filters-categories__input" type="radio" name="filter">
+                    <span class="filters-categories__radio">
                       Овощи и фрукты
                     </span>
                   </label>
                   <label class="filters-categories__label">
-                    <input class="filters-categories__input" type="checkbox" name="filter">
-                    <span class="filters-categories__checkbox">
+                    <input class="filters-categories__input" type="radio" name="filter">
+                    <span class="filters-categories__radio">
                       Бакалея
                     </span>
                   </label>
                   <label class="filters-categories__label">
-                    <input class="filters-categories__input" type="checkbox" name="filter">
-                    <span class="filters-categories__checkbox">
+                    <input class="filters-categories__input" type="radio" name="filter">
+                    <span class="filters-categories__radio">
                       Молочные продукты
                     </span>
                   </label>
                   <label class="filters-categories__label">
-                    <input class="filters-categories__input" type="checkbox" name="filter">
-                    <span class="filters-categories__checkbox">
+                    <input class="filters-categories__input" type="radio" name="filter">
+                    <span class="filters-categories__radio">
                       Хлеб
                     </span>
                   </label>
                   <label class="filters-categories__label">
-                    <input class="filters-categories__input" type="checkbox" name="filter">
-                    <span class="filters-categories__checkbox">
+                    <input class="filters-categories__input" type="radio" name="filter">
+                    <span class="filters-categories__radio">
                       Мясо
                     </span>
                   </label>
                   <label class="filters-categories__label">
-                    <input class="filters-categories__input" type="checkbox" name="filter">
-                    <span class="filters-categories__checkbox">
+                    <input class="filters-categories__input" type="radio" name="filter">
+                    <span class="filters-categories__radio">
                       Колбаса
                     </span>
                   </label>
                 </form>
               </li>
 
+
+
               <li class="filters__item">
-                <h4 class="filters__title">
+                <button class="filters__btn">
                   Предложения
-                </h4>
+                </button>
                 <form class="filters__inner filters-choice">
                   <label class="filters-choice__label">
                     <input class="filters-choice__input" type="checkbox" name="filter">
@@ -830,9 +832,9 @@
               </li>
 
               <li class="filters__item">
-                <h4 class="filters__title">
+                <button class="filters__btn">
                   Бренд
-                </h4>
+                </button>
                 <form class="filters__inner filters-choice">
                   <label class="filters-choice__label">
                     <input class="filters-choice__input" type="checkbox" name="filter">
@@ -867,25 +869,31 @@
                 </form>
               </li>
 
+              <!-- библиотека Ion.RangeSlider -->
+
               <li class="filters__item filter-price">
-                <h4 class="filters__title">
+                <button class="filters__btn">
                   Цена
-                </h4>
+                </button>
                 <form class="filters__inner filter-price__form" action="#">
-                  <label class="filter-price__label">
-                    <span class="filter-price__block">
-                      <span class="filter-price__text">от</span>
-                      <span class="filter-price__from"></span>
-                      <span class="filter-price__rub">₽</span>
-                    </span>
-                    <span class="filter-price__block">
-                      <span class="filter-price__text">до</span>
-                      <span class="filter-price__to"></span>
-                      <span class="filter-price__rub">₽</span>
-                    </span>
-                  </label>
-                  <input class="filter-price__input" type="text" name="price" data-min="0" data-max="1200"
-                    data-from="100" data-to="1000">
+                  <div class="extra-controls">
+                    <label class="filter-price__label">
+                      <span class="filter-price__block">
+                        <span class="filter-price__text">от</span>
+                        <input type="text" class="js-input-from filter-price__input" value="0" name="from" />
+                        <span class="filter-price__rub">₽</span>
+                      </span>
+                      <span class="filter-price__block">
+                        <span class="filter-price__text">до</span>
+                        <input type="text" class="js-input-to filter-price__input" value="0" name="to" />
+                        <span class="filter-price__rub">₽</span>
+                      </span>
+                    </label>
+                  </div>
+                  <div class="range-slider">
+                    <input type="text" class="js-range-slider" value="#" data-min="0" data-max="1200" data-from="100"
+                      data-to="1000" name="range-slider"/>
+                  </div>
                 </form>
               </li>
             </ul>
@@ -896,25 +904,27 @@
             <ul class="catalog-content__filter">
               <li class="catalog-content__filter-item catalog-content__filter-item--hidden">
                 <button class="catalog-content__filter-btn-adaptive">
-                  <svg class="ic-filter__img">
+                  <svg class="catalog-content__ic-filter">
                     <use xlink:href="images/sprite.svg#ic-filter" aria-label="кнопка фильтра для вывода списка"></use>
                   </svg>
                 </button>
               </li>
               <li class="catalog-content__filter-item">
                 <select class="catalog-content__filter-sort catalog-content__choice">
-                  <option value="">По названию</option>
-                  <option value="">По цене</option>
-                  <option value="">По категории</option>
-                  <option value="">По брендам</option>
+                  <option value="По названию">По названию</option>
+                  <option value="По популярности">По популярности</option>
+                  <option value="Сначала дешевые">Сначала дешевые</option>
+                  <option value="Сначала дорогие">Сначала дорогие</option>
+                  <option value="По алфавиту">По алфавиту</option>
                 </select>
               </li>
               <li class="catalog-content__filter-item">
                 <select class="catalog-content__filter-sort catalog-content__quantity">
-                  <option value="">по 12</option>
-                  <option value="">по 3</option>
-                  <option value="">по 24</option>
-                  <option value="">по 100</option>
+                  <option value="по 12">по 12</option>
+                  <option value="по 18">по 18</option>
+                  <option value="по 24">по 24</option>
+                  <option value="по 30">по 30</option>
+                  <option value="по 36">по 36</option>
                 </select>
               </li>
               <li class="catalog-content__filter-item">
@@ -1599,9 +1609,7 @@
             </div>
 
           </div>
-
         </div>
-
       </div>
 
     </section>

@@ -35,7 +35,6 @@ select {
   }
 }
 
-
 .title {
   margin-bottom: 28px;
   @extend %ruda-600;
@@ -64,7 +63,7 @@ select {
 
 .lock {
   overflow: hidden;
-  position: relative;  
+  position: relative;
   &::after {
     content: "";
     position: absolute;
@@ -355,12 +354,28 @@ select {
     background-color: $silver-100;
     width: 47px;
     height: 48px;
+    border-radius: 3px;
+    border-color: transparent;
+    transition: border-color 0.5s;
+  }
+
+  &__link--active,
+  &__link--disabled {
+    cursor: default;
   }
   &__link--active {
     border: 1px solid $dark-500;
-    border-radius: 3px;
   }
   &__link--disabled {
     fill: $silver-600;
+  }
+  &__link:hover {
+    border: 1px solid $silver-600;
+  }
+  &__link:focus {
+    box-shadow: 0 0 0 3px $green-200;
+  }
+    &__link:active {
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 }

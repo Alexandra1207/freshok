@@ -577,5 +577,75 @@
   .cart__rub::after {
     font-size: 14px;
   }
+}
 
+.jq-number {
+  position: relative;
+}
+
+.jq-number__field input {
+  width: 36px;
+  height: 24px;
+  text-align: center;
+  border: none;
+  background-color: rgba(99, 166, 14, 0.1);
+  @extend %opensans-400;
+  font-size: 16px;
+  line-height: 1;
+  color: $dark-500;
+}
+
+.jq-number__spin {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-color: $green-900;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.jq-number__spin:hover {
+  background-color: #4d800c;
+}
+
+.jq-number__spin.minus {
+  top: 0;
+  left: -24px;
+}
+
+.jq-number__spin.plus {
+  top: 0;
+  left: 36px;
+}
+
+.jq-number__spin::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  left: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transform: translate(-50%, -50%);
+  filter: invert(99%) sepia(87%) saturate(2%) hue-rotate(270deg) brightness(110%) contrast(101%);
+}
+.jq-number__spin.minus::after {
+  background-image: url("../images/sprite.svg#minus-btn");
+}
+
+.jq-number__spin.plus::after {
+  background-image: url("../images/sprite.svg#plus-btn");
+}
+.jq-number .product__num:focus {
+  outline: transparent;
+  border: 3px solid #e0edcf;
+}
+
+.product__num {
+  margin-right: 18px;
+  @include mq("phone", max) {
+    margin-right: 0;
+  }
 }
