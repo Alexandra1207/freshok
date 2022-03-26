@@ -3,7 +3,6 @@ $(function () {
 
   // Выплывание корзины
 
-
   $('.user-nav__item-cart').on('click', function () {
     $('.cart').toggleClass('cart--active');
     $('body').addClass('lock');
@@ -45,8 +44,6 @@ $(function () {
   $('.header__catalog-btn, .catalog__link').on('click', function () {
     $('.catalog, .header__catalog-btn').toggleClass('catalog--active');
   });
-
-
 
 
 
@@ -181,6 +178,7 @@ $(function () {
 
 
   $('.product__num').styler();
+  $('.catalog-content__filter-sort').styler();
 
 
   // section top-slider
@@ -203,17 +201,17 @@ $(function () {
     ]
   });
 
-  var containerEl1 = document.querySelector('[data-ref="container-1"]');
-  var containerEl2 = document.querySelector('[data-ref="container-2"]');
+  // var containerEl1 = document.querySelector('[data-ref="container-1"]');
+  // var containerEl2 = document.querySelector('[data-ref="container-2"]');
 
-  var config = {
-    controls: {
-      scope: 'local'
-    }
-  };
+  // var config = {
+  //   controls: {
+  //     scope: 'local'
+  //   }
+  // };
 
-  var mixer1 = mixitup(containerEl1, config);
-  var mixer2 = mixitup(containerEl2, config);
+  // var mixer1 = mixitup(containerEl1, config);
+  // var mixer2 = mixitup(containerEl2, config);
 
 
   

@@ -130,15 +130,16 @@
   &__inner {
     height: 298px;
     padding: 10px 18px 12px;
-    overflow-y: auto;
+    overflow-y: scroll;
     scroll-snap-type: y mandatory;
     scrollbar-width: thin;
     &::-webkit-scrollbar {
       width: 4px;
-      height: 129px;
-      background-color: #C4C4C4;
+      border-radius: 3px;
     }
-    overflow-y: auto;
+    &::-webkit-scrollbar-thumb {
+      background-color: #c4c4c4;
+    }
   }
 
   &__label {
@@ -190,7 +191,7 @@
     position: absolute;
     width: 24px;
     height: 24px;
-    margin-left: -36px;
+    left: 0;
     background-color: $silver-100;
     border: 1px solid $silver-600;
     border-radius: 3px;
@@ -248,6 +249,9 @@
     width: 264px;
     // text-align: center;
     margin: 0 auto;
+    @include mq("tablet-2", max) {
+      margin-left: 0;
+    }
   }
 
   .irs--round .irs-bar {
@@ -345,54 +349,147 @@
       display: none;
     }
   }
-  &__filter-sort {
+
+  // .jq-selectbox:root {
+  //   box-shadow: 0 0 0 3px $green-200;
+  // }
+  .jq-selectbox__select {
     height: 47px;
-    padding: 0 37px 0 10px;
-    letter-spacing: 0.03em;
-    color: $dark-500;
-    background-color: $white;
+    background: transparent;
     border: 1px solid $silver-600;
     border-radius: 3px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    appearance: none;
-    background-image: url(../images/sprite.svg#arrow-down);
-    background-size: 11px 11px;
-    background-repeat: no-repeat;
-    transition: box-shadow 0.4s;
-    @include mq("desktop", max) {
-      font-size: 12px;
-    }
-    @include mq("phone", max) {
-      padding: 0 0 0 2px;
-    }
-    &:focus {
-      box-shadow: 0 0 0 3px $green-200;
-    }
-  }
-  &__filter-sort option {
-    font-size: 14px;
+    box-shadow: none;
+    @extend %opensans-400;
     color: $dark-500;
+    text-shadow: none;
+
+    //     :root {
+    //   --swiper-theme-color: #007aff;
+    // }
   }
 
-  &__choice {
-    min-width: 149px;
-    background-position: 92% center;
-    @include mq("phone", max) {
-      min-width: 0;
-      width: 114px;
-    }
+  .jq-selectbox__trigger {
+    border-left: none;
   }
-  &__quantity {
-    min-width: 99px;
-    background-position: 86% center;
-    @include mq("phone", max) {
-      min-width: 0;
-      width: 71px;
-      padding-left: 4px;
-    }
+  .jq-selectbox__select-text {
+    display: flex;
+    height: 47px;
+    align-items: center;
   }
+  .jq-selectbox__trigger-arrow {
+    position: absolute;
+    top: 18px;
+    right: 10px;
+    width: 13px;
+    height: 7px;
+    border: none;
+    background-image: url(../images/sprite.svg#arrow-down);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  // &__choice {
+  //   max-width: 149px;
+  //   width: 100%;
+  // }
+  .focused .jq-selectbox__select {
+    box-shadow: 0 0 0 3px $green-200;
+  }
+  .jq-selectbox__dropdown {
+    padding: 7px 8px;
+    border: 1px solid $silver-600;
+    border-radius: 0px 0px 6px 6px;
+    @extend %opensans-400;
+    color: $dark-500;
+  }
+  .jq-selectbox.opened {
+    border: 1px solid #505050;
+    border-radius: 3px 3px 0px 0px;
+  }
+  .jq-selectbox__dropdown li {
+    padding: 7px 0;
+  }
+  .jq-selectbox li:hover {
+    background-color: transparent;
+    color: $green-900;
+  }
+  .jq-selectbox li.selected {
+    color: $dark-500;
+    background-color: transparent;
+    opacity: 0.7;
+  }
+
+  // &__choice .jq-selectbox__select {
+  //   max-width: 149px;
+  //   width: 100%;
+  // }
+  // &__filter-sort {
+  //   height: 47px;
+  // }
+  // .jq-selectbox {
+  //   height: 47px;
+  //   color: $dark-500;
+  //   background-color: $white;
+  //   border: 1px solid $silver-600;
+  //   border-radius: 3px;
+  // }
+  // &__filter-sort {
+  //   height: 47px;
+  //   padding: 0 37px 0 10px;
+  //   letter-spacing: 0.03em;
+  //   color: $dark-500;
+  //   background-color: $white;
+  //   border: 1px solid $silver-600;
+  //   border-radius: 3px;
+  //   -webkit-appearance: none;
+  //   -moz-appearance: none;
+  //   -ms-appearance: none;
+  //   appearance: none;
+  //   background-image: url(../images/sprite.svg#arrow-down);
+  //   background-size: 11px 11px;
+  //   background-repeat: no-repeat;
+  //   transition: box-shadow 0.4s;
+  //   @include mq("desktop", max) {
+  //     font-size: 12px;
+  //   }
+  //   @include mq("phone", max) {
+  //     padding: 0 0 0 2px;
+  //   }
+  //   &:focus {
+  //     box-shadow: 0 0 0 3px $green-200;
+  //   }
+  // }
+  // &__filter-sort option {
+  //   font-size: 14px;
+  //   color: $dark-500;
+  // }
+  // &__filter-sort {
+  //       height: 47px;
+  //   font-size: 14px;
+  //   line-height: 1.2;
+  //   background-color: $white;
+  //   border: 1px solid $silver-600;
+  //   border-radius: 3px;
+  //   color: $dark-500;
+  // }
+
+  // &__choice {
+  //   max-width: 149px;
+  //   width: 100%;
+  //   background-position: 92% center;
+  //   @include mq("phone", max) {
+  //     min-width: 0;
+  //     width: 114px;
+  //   }
+  // }
+  // &__quantity {
+  //   min-width: 99px;
+  //   background-position: 86% center;
+  //   @include mq("phone", max) {
+  //     min-width: 0;
+  //     width: 71px;
+  //     padding-left: 4px;
+  //   }
+  // }
   &__filter-btn,
   &__filter-btn-adaptive {
     display: flex;
@@ -408,6 +505,7 @@
       fill: $green-900;
     }
   }
+
   &__filter-item--hidden {
     @include mq("tablet-2", min) {
       display: none;
@@ -501,13 +599,18 @@
     }
 
     .product-mini__inner {
+      position: absolute;
+      top: 260px;
+      left: 0;
+      right: 0;
+      height: 29px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 7px;
       padding: 0 14px 0 19px;
+      background-color: rgba(255, 255, 255, 0.5);
       @include mq("phone", max) {
-        background-color: rgba(255, 255, 255, 0.5);
         padding: 0 12px;
       }
     }

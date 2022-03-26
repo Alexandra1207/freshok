@@ -4,6 +4,7 @@ body {
 }
 
 body {
+  position: relative;
   display: flex;
   flex-direction: column;
   @extend %opensans-400;
@@ -12,6 +13,34 @@ body {
   letter-spacing: 0.03em;
   color: $dark-500;
   background-color: $white;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+// body {
+//   position: relative;
+//   &::after {
+//     content: "";
+//     position: absolute;
+//     left: 0;
+//     right: 0;
+//     top: 0;
+//     bottom: 0;
+//     background-color: rgba(0, 0, 0, 0);
+//   }
+// }
+
+.lock {
+  overflow: hidden;
+  &::after {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
 }
 
 button,
@@ -59,20 +88,6 @@ select {
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
-}
-
-.lock {
-  overflow: hidden;
-  position: relative;
-  &::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
 }
 
 .hidden {
@@ -358,7 +373,9 @@ select {
     border-color: transparent;
     transition: border-color 0.5s;
   }
-
+  &__link:hover {
+    border: 1px solid $silver-600;
+  }
   &__link--active,
   &__link--disabled {
     cursor: default;
@@ -369,13 +386,14 @@ select {
   &__link--disabled {
     fill: $silver-600;
   }
-  &__link:hover {
-    border: 1px solid $silver-600;
+   &__link--disabled:hover {
+    border: none;
   }
+
   &__link:focus {
     box-shadow: 0 0 0 3px $green-200;
   }
-    &__link:active {
+  &__link:active {
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 }
