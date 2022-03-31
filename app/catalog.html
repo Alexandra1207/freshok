@@ -11,14 +11,6 @@
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 
-
-
-<!-- Тут проблемы с выпадающим меню. У меня перестало работать затемнение при выпадении фильтров на странице каталогов и корзины на главной странице. До этого работало, но при этом не выпадали выпадашки в хэдер на странице каталога. Я поменяла в файле js какой-то порядок, стало работать , но пропало затемнение -->
-
-<!-- и липкий хэдер неадекватно почему-то себя ведет. То подниматься не хочет. То размер меняет -->
-
-<!-- И еще проблемы с плавностью. Не для всех выпадашек получается ее сделать. Помоги, пожалуйста -->
-
 <body>
   <header class="header">
     <div class="header__top">
@@ -713,7 +705,7 @@
             </div>
             <ul class="filters__list">
               <li class="filters__item filters-categories">
-                <button class="filters__btn">
+                <button class="filters__btn filters-categories__btn">
                   Категории
                 </button>
                 <form class="filters__inner filters-categories__inner">

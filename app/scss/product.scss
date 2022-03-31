@@ -100,7 +100,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    // height: 100px;
+    height: 100px;
     padding: 0 18px 0;
     @include mq("desktop", max) {
       padding: 0 11px 0;
@@ -166,7 +166,7 @@
     align-items: center;
   }
   &__num {
-    margin-right: 24px;
+    margin-right: 48px;
   }
   &__cart-btn {
     position: relative;
@@ -251,7 +251,7 @@
     box-shadow: none;
     user-select: none;
     text-shadow: none;
-    cursor: pointer;    
+    cursor: pointer;
   }
   .jq-number__spin::after {
     border: transparent;
@@ -266,6 +266,9 @@
     font-size: 16px;
     line-height: 1;
     color: $dark-500;
+    &:focus {
+      border: 1px solid $silver-600;
+    }
   }
 
   .jq-number__spin {
@@ -649,6 +652,89 @@
     outline: transparent;
     border: 3px solid #e0edcf;
   }
+  .jq-number {
+    position: relative;
+    @include mq("desktop", max) {
+      display: none;
+    }
+  }
+  .jq-number__field {
+    width: 36px;
+    border: transparent;
+    box-shadow: none;
+  }
+  .jq-number__spin {
+    border: none;
+    border-bottom-color: transparent;
+    background: transparent;
+    box-shadow: none;
+    user-select: none;
+    text-shadow: none;
+    cursor: pointer;
+  }
+  .jq-number__spin::after {
+    border: transparent;
+  }
+  .jq-number__field input {
+    width: 36px;
+    height: 24px;
+    text-align: center;
+    border: none;
+    background-color: rgba(99, 166, 14, 0.1);
+    @extend %opensans-400;
+    font-size: 16px;
+    line-height: 1;
+    color: $dark-500;
+  }
+
+  .jq-number__spin {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-color: $green-900;
+    transition: background-color 0.3s;
+  }
+
+  .jq-number__spin:hover {
+    background-color: #4d800c;
+  }
+
+  .jq-number__spin.minus {
+    top: 0;
+    left: -24px;
+    border-radius: 3px 0 0 3px;
+  }
+
+  .jq-number__spin.plus {
+    top: 0;
+    left: 36px;
+    border-radius: 0 3px 3px 0;
+  }
+
+  .jq-number__spin::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transform: translate(-50%, -50%);
+    filter: invert(99%) sepia(87%) saturate(2%) hue-rotate(270deg) brightness(110%) contrast(101%);
+  }
+  .jq-number__spin.minus::after {
+    background-image: url("../images/sprite.svg#minus-btn");
+  }
+
+  .jq-number__spin.plus::after {
+    background-image: url("../images/sprite.svg#plus-btn");
+  }
+  .jq-number .product__num:focus {
+    outline: transparent;
+    border: 3px solid #e0edcf;
+  }
 
   .cart__rub {
     font-size: 20px;
@@ -656,8 +742,8 @@
   .cart__rub::after {
     font-size: 14px;
   }
-  &__num {
-    margin-right: 18px;
+  .product__num {
+    margin-right: 30px;
     @include mq("phone", max) {
       margin-right: 0;
     }

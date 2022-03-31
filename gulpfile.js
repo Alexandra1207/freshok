@@ -9,6 +9,7 @@ const del          = require('del');
 const browserSync  = require('browser-sync').create();
 const svgSprite    = require('gulp-svg-sprite');
 const cheerio      = require('gulp-cheerio');
+// const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 
 
@@ -109,7 +110,6 @@ function watching() {
   watch(['app/*.html']).on('change', browserSync.reload);
   watch(['app/images/icons/*.svg'], svgSprites);
 }
-
 
 exports.styles = styles;
 exports.scripts = scripts;

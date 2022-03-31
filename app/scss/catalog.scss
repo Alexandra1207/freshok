@@ -35,12 +35,15 @@
     margin-right: 0;
     padding: 0 0 30px 20px;
     background-color: $white;
-    z-index: 5;
+    z-index: 11;
     transform: translateX(-500%);
+    opacity: 0;
     transition: opacity 0.5s;
   }
   &.filters--active {
     transform: translateX(0);
+    height: 1245px;
+    opacity: 1;
   }
   @include mq("tablet", max) {
     top: -357px;
@@ -122,23 +125,37 @@
     padding: 18px;
     font-size: 18px;
   }
+  &__btn:checked::after {
+    transform: rotate(90deg);
+
+  }
 }
 
 // тут использовала свойство scroll-snap-type, не знаю на сколько оно корректно, На caniuse проверила, вроде норм. Если так нельзя, скажи, я исправлю
 
 .filters-categories {
   &__inner {
+    display: none;
     height: 298px;
     padding: 10px 18px 12px;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     scrollbar-width: thin;
+    opacity: 0;
+    transition: opacity 1s;
     &::-webkit-scrollbar {
       width: 4px;
       border-radius: 3px;
     }
     &::-webkit-scrollbar-thumb {
       background-color: #c4c4c4;
+    }
+  }
+  &__inner--active {
+    display: block;
+    opacity: 1;
+    .filters__btn::after {
+      transform: rotateY(90deg);
     }
   }
 
@@ -222,6 +239,9 @@
     border: 1px solid $silver-600;
     border-radius: 3px;
   }
+  // .js-input-from.focused {
+  //   border: 1px solid $green-900;
+  // }
   // &__from,
   // &__to {
   //   display: flex;
@@ -235,6 +255,9 @@
   //   border: 1px solid $silver-600;
   //   border-radius: 3px;
   // }
+  &__input:focus {
+    border: 1px solid $green-900;
+  }
   &__text {
     @extend %ruda-400;
     line-height: 1.2;
@@ -350,8 +373,14 @@
     }
   }
 
-  // .jq-selectbox:root {
-  //   box-shadow: 0 0 0 3px $green-200;
+  // &__choice {
+  //   width: 149px;
+  //   // padding-left: 11px;
+  // }
+
+  // .jq-selectbox,
+  // .jq-select-multiple {
+  //   z-index: 9;
   // }
   .jq-selectbox__select {
     height: 47px;
@@ -362,19 +391,27 @@
     @extend %opensans-400;
     color: $dark-500;
     text-shadow: none;
-
-    //     :root {
-    //   --swiper-theme-color: #007aff;
-    // }
   }
 
-  .jq-selectbox__trigger {
-    border-left: none;
+  .focused .jq-selectbox__select {
+    border: 1px solid $silver-600;
+    box-shadow: 0 0 0 3px $green-200;
+  }
+
+  .jq-selectbox {
+    z-index: 9;
   }
   .jq-selectbox__select-text {
     display: flex;
     height: 47px;
     align-items: center;
+    padding: 0 42px 0 11px;
+  }
+  &__quantity {
+    width: 99px;
+    .jq-selectbox__select-text {
+      padding-left: 15px;
+    }
   }
   .jq-selectbox__trigger-arrow {
     position: absolute;
@@ -386,37 +423,57 @@
     background-image: url(../images/sprite.svg#arrow-down);
     background-repeat: no-repeat;
     background-size: cover;
+    filter: invert(88%) sepia(0%) saturate(40%) hue-rotate(136deg) brightness(90%) contrast(89%);
   }
-  // &__choice {
-  //   max-width: 149px;
-  //   width: 100%;
-  // }
-  .focused .jq-selectbox__select {
-    box-shadow: 0 0 0 3px $green-200;
-  }
+
   .jq-selectbox__dropdown {
+    width: 100%;
     padding: 7px 8px;
     border: 1px solid $silver-600;
     border-radius: 0px 0px 6px 6px;
+    background-color: $white;
     @extend %opensans-400;
     color: $dark-500;
+    opacity: 0;
+    transition: opacity 1s;
+    ul {
+      height: fit-content;
+      overflow: hidden;
+    }
+    li {
+      padding: 8px 0;
+      transition: opacity 0.5s;
+    }
+    li:hover {
+      opacity: 0.5;
+    }
   }
   .jq-selectbox.opened {
     border: 1px solid #505050;
     border-radius: 3px 3px 0px 0px;
+    .jq-selectbox__dropdown {
+      opacity: 1;
+    }
+    .jq-selectbox__select {
+      border: transparent;      
+      box-shadow: 0 0 0 0 $white;
+    }
+    .jq-selectbox__trigger-arrow {
+      background-image: url(../images/sprite.svg#arrow-up);
+    }
   }
-  .jq-selectbox__dropdown li {
-    padding: 7px 0;
-  }
-  .jq-selectbox li:hover {
-    background-color: transparent;
-    color: $green-900;
-  }
-  .jq-selectbox li.selected {
-    color: $dark-500;
-    background-color: transparent;
-    opacity: 0.7;
-  }
+  // .jq-selectbox__dropdown li {
+  //   padding: 7px 0;
+  // }
+  // .jq-selectbox li:hover {
+  //   background-color: transparent;
+  //   color: $green-900;
+  // }
+  // .jq-selectbox li.selected {
+  //   color: $dark-500;
+  //   background-color: transparent;
+  //   opacity: 0.7;
+  // }
 
   // &__choice .jq-selectbox__select {
   //   max-width: 149px;
@@ -610,6 +667,9 @@
       margin-bottom: 7px;
       padding: 0 14px 0 19px;
       background-color: rgba(255, 255, 255, 0.5);
+      @include mq("tablet-2", max) {
+        top: 160px;
+      }
       @include mq("phone", max) {
         padding: 0 12px;
       }
@@ -641,6 +701,8 @@
           width: 100%;
         }
         .product-mini__inner {
+          position: static;
+          height: fit-content;
           margin-bottom: 13px;
         }
         &__content {

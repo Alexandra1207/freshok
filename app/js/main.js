@@ -1,5 +1,14 @@
 
 $(function () {
+  // Сворачивание фильтров
+
+  $('.filters-categories__btn').on('click', function () {
+    $('.filters-categories__inner').toggleClass('filters-categories__inner--active');
+  });
+
+  // $('.filters__btn').on('click', function () {
+  //   $('.filters-choice').slideToggle();
+  // });
 
   // Выплывание корзины
 
@@ -14,16 +23,47 @@ $(function () {
     $('body').removeClass('lock');
   });
 
+  $('.catalog-content__filter-btn-adaptive').on('click', function () {
+    $('.filters').addClass('filters--active');
+    $('body').addClass('lock');
+  });
+
+  $('.filters__close-btn').on('click', function () {
+    $('.filters').removeClass('filters--active');
+    $('body').removeClass('lock');
+  });
+
+
+
+
+
   let userNav = $('.user-nav__item-cart');
   let cart = $('.cart');
+  let filterBtn = $('.catalog-content__filter-btn-adaptive');
+  let filters = $('.filters');
+
+  $(document).on('click', function (e) {
+    if (!filterBtn.is(e.target) && filterBtn.has(e.target).length === 0 &&
+      !filters.is(e.target) && filters.has(e.target).length === 0 && userNav.is(e.target)) {
+      filters.removeClass('filters--active');
+      $('body').removeClass('lock');
+    }
+  });
 
   $(document).on('click', function (e) {
     if (!userNav.is(e.target) && userNav.has(e.target).length === 0 &&
-      !cart.is(e.target) && cart.has(e.target).length === 0) {
+      !cart.is(e.target) && cart.has(e.target).length === 0 && filterBtn.is(e.target)) {
       cart.removeClass('cart--active');
       $('body').removeClass('lock');
     }
   });
+
+
+
+  
+
+
+
 
   $('.menu__btn, .header__adaptive-link, .header__adaptive-catalog-btn, .header__address').on('click', function () {
     $('.menu__btn, .header__adaptive').toggleClass('menu__btn--active');
@@ -51,16 +91,17 @@ $(function () {
   // Выплывающее меню фильтров на адаптиве. Не получилось договриться с методом toggle(). Мне кажется, с затемнением это не работает. Пришлось вернуться к add/removeClass. Если, вдруг, знаешь, как это делается, подскажи. 
   // и еще не получается сделать плавность затемнения. Пробовала разные варианты trasition, не помогает 
 
-  $('.catalog-content__filter-btn-adaptive').on('click', function () {
-    $('.filters').addClass('filters--active');
-    $('body').addClass('lock');
+  // $('.catalog-content__filter-btn-adaptive').on('click', function () {
+  //   $('.filters').addClass('filters--active');
+  //   $('body').addClass('lock');
+  // });
 
-  });
+  // $('.filters__close-btn').on('click', function () {
+  //   $('.filters').removeClass('filters--active');
+  //   $('body').removeClass('lock');
+  // });
 
-  $('.filters__close-btn').on('click', function () {
-    $('.filters').removeClass('filters--active');
-    $('body').removeClass('lock');
-  });
+  // выпадающий каталог
 
   let btnCatalog = $('.header__catalog-btn');
   let catalog = $('.catalog');
@@ -75,16 +116,17 @@ $(function () {
 
 
 
-  let filterBtn = $('.catalog-content__filter-btn-adaptive');
-  let filters = $('.filters');
+  // let filterBtn = $('.catalog-content__filter-btn-adaptive');
+  // let filters = $('.filters');
+  // let filterAdaptive = $('.catalog-content__filter-btn-adaptive')
 
-  $(document).on('click', function (e) {
-    if (!filterBtn.is(e.target) && filterBtn.has(e.target).length === 0 &&
-      !filters.is(e.target) && filters.has(e.target).length === 0) {
-      filters.removeClass('filters--active');
-      $('body').removeClass('lock');
-    }
-  });
+  // $(document).on('click', function (e) {
+  //   if (!filterBtn.is(e.target) && filterBtn.has(e.target).length === 0 &&
+  //     !filters.is(e.target) && filters.has(e.target).length === 0 && userNav.is(e.target)) {
+  //     filters.removeClass('filters--active');
+  //     $('body').removeClass('lock');
+  //   }
+  // });
 
 
   // Каталог, переключение списков
@@ -103,7 +145,7 @@ $(function () {
 
 
   // ionRangeSlider
-  
+
 
   let $range = $(".js-range-slider"),
     $inputFrom = $(".js-input-from"),
@@ -201,20 +243,26 @@ $(function () {
     ]
   });
 
-  // var containerEl1 = document.querySelector('[data-ref="container-1"]');
-  // var containerEl2 = document.querySelector('[data-ref="container-2"]');
-
-  // var config = {
-  //   controls: {
-  //     scope: 'local'
-  //   }
-  // };
-
-  // var mixer1 = mixitup(containerEl1, config);
-  // var mixer2 = mixitup(containerEl2, config);
 
 
-  
+  const indexPage = document.getElementById('index')
+
+  var containerEl1 = document.querySelector('[data-ref="container-1"]');
+  var containerEl2 = document.querySelector('[data-ref="container-2"]');
+
+  if (indexPage) {
+    var config = {
+      controls: {
+        scope: 'local'
+      }
+    };
+    var mixer1 = mixitup(containerEl1, config);
+    var mixer2 = mixitup(containerEl2, config);
+  }
+
+
+
+
 
   // липкий хэдер
 
